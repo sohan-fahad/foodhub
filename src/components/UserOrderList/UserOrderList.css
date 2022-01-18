@@ -1,0 +1,36 @@
+.UserOrderList {
+  height: auto;
+  padding: 100px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user_order_list_wrapper {
+  width: 700px;
+}
+.UserOrderList .user_active_order_list h3 {
+  color: var(--primary);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 991px) {
+  .UserOrderList {
+    padding-bottom: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .UserOrderList {
+    padding: 0 30px;
+    position: relative;
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .UserOrderList {
+    position: static;
+    padding: 50px 30px;
+  }
+}

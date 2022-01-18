@@ -1,0 +1,84 @@
+.VerifyCode {
+  height: auto;
+  padding: 100px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.VerifyCode .verify_code_wrapper {
+  height: auto;
+  position: relative;
+  padding: 40px;
+  box-shadow: 1px 1px 10px rgb(212, 212, 212);
+  width: 600px;
+}
+.VerifyCode .verify_code_wrapper img {
+  width: 50px;
+  margin-top: 80px;
+}
+.VerifyCode .verify_code_wrapper h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--title);
+  margin: 20px 0 30px;
+}
+.VerifyCode .verify_code_wrapper p {
+  font-size: 16px;
+  color: #646464;
+  margin: 0 0 20px 0;
+}
+.VerifyCode .verify_code_wrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+.VerifyCode .verify_code_wrapper form input {
+  padding: 15px 10px;
+  border: none;
+  background-color: #ffff;
+  box-shadow: 0 0 5pt #d3d3d3;
+}
+.VerifyCode .verify_code_wrapper form label {
+  color: #646464;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.VerifyCode .verify_code_wrapper form input[type="submit"] {
+  padding: 15px 10px;
+  border: none;
+  background-color: #ffff;
+  box-shadow: 0 0 5pt #d3d3d3;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--title);
+  transition: 0.3s ease-in;
+}
+.VerifyCode .verify_code_wrapper form input[type="submit"]:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+@media screen and (max-width: 991px) {
+  .VerifyCode {
+    padding: 0;
+    position: relative;
+    top: 100px;
+    padding-bottom: 100px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .VerifyCode {
+    padding: 0;
+    position: relative;
+    top: 100px;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .VerifyCode {
+    position: static;
+    padding: 50px 10px;
+  }
+}

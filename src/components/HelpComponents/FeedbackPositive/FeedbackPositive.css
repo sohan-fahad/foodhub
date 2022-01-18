@@ -1,0 +1,66 @@
+.FeedbackPositive {
+  width: 100%;
+  height: 100%;
+  padding: 50px 0;
+  background-color: rgba(200, 200, 200, 0);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.FeedbackPositive_modalContainer {
+  height: auto;
+  width: 80%;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  position: relative;
+}
+.FeedbackPositive_modalContainer i {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.FeedbackPositive .FeedbackPositive_modalContainer .feedback_option {
+  background-color: #ffff;
+  border: 0.5px solid #646464;
+  border-radius: 5px;
+  padding: 10px 30px;
+}
+
+.FeedbackPositive_modalContainer form input[type="checkbox"] {
+  display: none;
+}
+
+.FeedbackPositive_modalContainer
+  form
+  input[type="checkbox"]:checked
+  ~ .feedback_option {
+  background-color: var(--primary);
+  color: #ffff;
+  border: none;
+}
+
+.FeedbackPositive_modalContainer form input[type="submit"] {
+  background-color: var(--primary);
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffff;
+}
+
+.FeedbackPositive_modalContainer form input[type="submit"]:disabled {
+  background-color: rgb(139, 139, 139);
+  color: rgb(0, 0, 0);
+}

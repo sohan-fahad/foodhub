@@ -1,0 +1,63 @@
+.ActiveOrderList {
+  display: flex;
+  justify-content: space-between;
+}
+.ActiveOrderList .active_order_list_info h3 {
+  font-size: 22px !important;
+  color: var(--title) !important;
+  font-weight: 700 !important;
+  margin-bottom: 20px !important;
+}
+.ActiveOrderList .active_order_list_info p {
+  font-size: 16px;
+  color: #646464;
+}
+.ActiveOrderList .active_order_list_info p span {
+  color: var(--title);
+}
+.active_order_list_btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+}
+.active_order_list_btn p {
+  color: #646464;
+  font-size: 16px;
+}
+.active_order_list_btn button {
+  border: none;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.swal2-styled.swal2-confirm {
+  border: 0;
+  border-radius: 0.25em;
+  background: initial;
+  background-color: var(--primary) !important;
+  color: #fff;
+  font-size: 1em;
+}
+.swal2-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.swal2-textarea {
+  outline: none;
+}
+.swal2-textarea:focus {
+  border: 1px solid #646464 !important;
+  overflow: auto !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.swal2-cancel {
+  background-color: #ffffff !important;
+  border: 1px solid var(--primary) !important;
+  color: var(--primary) !important;
+}

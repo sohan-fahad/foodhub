@@ -1,0 +1,81 @@
+.Work_Process {
+  padding: 100px 0;
+}
+
+.Work_Process h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--title);
+  text-transform: uppercase;
+}
+.Work_Process p {
+  color: var(--title);
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  padding: 0;
+}
+.work_process_card {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #5f5f5f3b;
+  text-align: center;
+}
+.work_process_icon {
+  padding: 15px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  border-radius: 10px;
+}
+.work_process_icon i {
+  font-size: 30px;
+  color: #ffff;
+}
+.work_process_card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+.work_process_card p {
+  margin: 0;
+  line-height: 30px;
+}
+
+@media screen and (max-width: 991px) {
+  .Work_Process {
+    padding: 50px 0 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Work_Process {
+    padding: 50px 0 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Work_Process {
+    padding: 50px 0 0;
+  }
+  .Work_Process h1 {
+    font-size: 24px;
+  }
+  .Work_Process p {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+  .work_process_card h3 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .work_process_card p {
+    margin: 0;
+  }
+}

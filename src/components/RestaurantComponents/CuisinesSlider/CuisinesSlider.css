@@ -1,0 +1,31 @@
+.CuisinesSlider {
+  margin-bottom: 50px;
+}
+.CuisinesSlider h3 {
+  font-size: 36px;
+  color: var(--title);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.CuisinesSlider .slick-prev:before,
+.CuisinesSlider .slick-next:before {
+  font-family: "slick";
+  font-size: 35px;
+  /* line-height: 1; */
+  opacity: 0.75;
+  color: var(--primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (max-width: 600px) {
+  .CuisinesSlider .slick-prev:before,
+  .CuisinesSlider .slick-next:before {
+    display: none;
+  }
+  .CuisinesSlider h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}

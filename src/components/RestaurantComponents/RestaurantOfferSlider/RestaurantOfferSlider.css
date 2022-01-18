@@ -1,0 +1,28 @@
+.RestaurantOfferSlider {
+  margin-bottom: 50px;
+}
+.RestaurantOfferSlider h3 {
+  font-size: 36px;
+  color: var(--title);
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.RestaurantOfferSlider .slick-prev:before,
+.RestaurantOfferSlider .slick-next:before {
+  font-family: "slick";
+  font-size: 35px;
+  /* line-height: 1; */
+  opacity: 0.75;
+  color: var(--primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (max-width: 600px) {
+  .RestaurantOfferSlider .slick-prev:before,
+  .RestaurantOfferSlider .slick-next:before {
+    display: none;
+  }
+}

@@ -1,0 +1,132 @@
+.Restaurant_Info {
+  padding-bottom: 100px;
+}
+.Restaurant_Info h1 {
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--title);
+}
+.Restaurant_Info p {
+  font-size: 16px;
+  color: var(--title);
+  margin-top: 30px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.Restaurant_Info_container {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.Restaurant_Info_Details {
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.246);
+  position: relative;
+  left: -300px;
+  background-color: #ffff;
+}
+.Restaurant_Info_Details h3 {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--title);
+  margin: 0 0 40px 0;
+}
+.Restaurant_Info_Details p {
+  font-size: 16px;
+  color: var(--title);
+  text-align: left;
+  margin-bottom: 0;
+}
+.Restaurant_Info_btn {
+  border: none;
+  background-color: var(--primary);
+  padding: 20px 60px;
+  letter-spacing: 1px;
+  font-size: 16px;
+  color: #ffff;
+  font-weight: 700;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 1199px) {
+  .Restaurant_Info {
+    padding-top: 100px;
+  }
+  .Restaurant_Info_Details {
+    position: relative;
+    left: -200px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .Restaurant_Info_container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .Restaurant_Info_Img {
+    width: 100%;
+  }
+  .Restaurant_Info_Img img {
+    width: 100%;
+  }
+
+  .Restaurant_Info_Details {
+    width: 80%;
+    position: absolute;
+    top: 500px;
+    left: 70px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .Restaurant_Info_Details {
+    width: 80%;
+    position: absolute;
+    top: 350px;
+    left: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Restaurant_Info {
+    padding-bottom: 50px;
+    padding-top: 50px;
+  }
+  .Restaurant_Info h1 {
+    font-size: 24px;
+  }
+  .Restaurant_Info p {
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .Restaurant_Info_Details {
+    width: 89%;
+    position: static;
+    margin-top: -200px;
+  }
+  .Restaurant_Info_Details h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--title);
+    margin-bottom: 20px;
+  }
+  .Restaurant_Info_Details p {
+    font-size: 16px;
+    color: var(--title);
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .Restaurant_Info_btn {
+    padding: 10px 15px;
+    color: #ffff;
+    border-radius: 5px;
+    margin-top: 0;
+    letter-spacing: 0;
+    font-weight: 500;
+  }
+}

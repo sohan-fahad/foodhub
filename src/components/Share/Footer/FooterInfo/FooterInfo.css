@@ -1,0 +1,64 @@
+.FooterInfo {
+  background-color: #1d1d1d;
+  padding: 100px 0;
+}
+.FooterInfo h3 {
+  font-size: 36px;
+  font-weight: 700;
+  padding: 0;
+  margin-bottom: 30px;
+  color: var(--primary);
+}
+.FooterInfo p {
+  padding: 0;
+  margin: 0;
+  line-height: 35px;
+  color: #ffff;
+}
+
+.FooterInfo h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffff;
+  text-transform: uppercase;
+}
+
+.FooterInfo .footerNav {
+  color: #ffff;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 30px;
+}
+.FooterInfo .footerNav li {
+  color: #ffff;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 991px) {
+  .FooterInfo {
+    position: relative;
+    top: 80px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .FooterInfo {
+    position: relative;
+    top: 200px;
+    padding-bottom: 150px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .FooterInfo {
+    position: static;
+    padding: 50px 20px;
+  }
+  .FooterInfo h1,
+  h3 {
+    font-size: 24px;
+    text-align: center;
+  }
+  .FooterInfo p,
+  li {
+    text-align: center;
+  }
+}

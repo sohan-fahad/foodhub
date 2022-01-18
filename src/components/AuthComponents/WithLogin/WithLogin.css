@@ -1,0 +1,37 @@
+.login-with-btn {
+  width: 100%;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  padding: 20px 16px 20px 42px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(218, 218, 218, 0.342),
+    -2px -2px 5px rgba(218, 218, 218, 0.342);
+
+  color: #646464;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: white;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position-x: 30px;
+  background-position-y: center;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+.login-with-btn:last-child {
+  margin-bottom: 0;
+}
+
+.login-with-btn:hover {
+  box-shadow: -1px -1px 5px rgba(143, 195, 255, 0.39);
+}
+
+@media screen and (max-width: 600px) {
+  .login-with-btn {
+    font-size: 12px;
+  }
+}

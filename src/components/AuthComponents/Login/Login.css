@@ -1,0 +1,79 @@
+.Login {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 10px;
+}
+.login_form_wrapper {
+  height: auto;
+  padding: 40px;
+  box-shadow: 1px 1px 10px rgb(212, 212, 212);
+  width: 500px;
+}
+.login_form_wrapper h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--title);
+}
+.login_form_wrapper p {
+  font-size: 16px;
+  color: #646464;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.login_form_wrapper h5 {
+  font-size: 16px;
+  color: var(--title);
+}
+
+.login_btn_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.email_login_btn {
+  padding: 20px;
+  width: 100%;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 16px;
+  border: 1px solid var(--primary);
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  letter-spacing: 1px;
+}
+.email_login_btn:visited {
+  color: var(--primary);
+}
+.login_term_condition {
+  color: #646464;
+  font-size: 16px;
+}
+.login_term_condition span {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+@media screen and (max-width: 991px) {
+  .Login {
+    height: auto;
+    padding-top: 100px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Login {
+    padding-bottom: 0;
+    padding-top: 150px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Login {
+    padding-bottom: 50px;
+    padding-top: 50px;
+  }
+}

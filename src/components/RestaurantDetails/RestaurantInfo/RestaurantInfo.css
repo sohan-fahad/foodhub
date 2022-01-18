@@ -1,0 +1,58 @@
+.RestaurantInfo {
+  padding: 25px 10px;
+}
+.restaurant_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurant_wrapper i {
+  font-size: 25px;
+  color: var(--primary);
+}
+.RestaurantInfo_name h3 {
+  color: var(--tile);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.RestaurantInfo_review {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.RestaurantInfo_review p:last-child {
+  margin-left: 30px;
+  font-size: 16px;
+  margin-bottom: 0;
+  color: var(--secondary);
+}
+.RestaurantInfo_review p:first-child {
+  background-color: var(--primary);
+  margin-bottom: 0;
+  color: #fff;
+  padding: 10px 15px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.RestaurantInfo_review p i {
+  color: #fdc50e;
+  font-size: 20px;
+}
+.restaurantInfo_button {
+  display: flex;
+  justify-content: center;
+}
+.restaurantInfo_button button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--primary);
+}
+.restaurantInfo_button button:hover {
+  border-bottom: 3px solid var(--primary);
+}

@@ -1,0 +1,26 @@
+.top_menu {
+  height: 60px;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+}
+.top_menu_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top_menu_container button {
+  background-color: var(--primary);
+  border: none;
+  color: #ffff;
+  font-size: 16px;
+}
+.top_menu_container button:last-child {
+  border-left: 1px solid #ffff;
+}
+@media screen and (max-width: 600px) {
+  .top_menu {
+    display: none;
+  }
+}

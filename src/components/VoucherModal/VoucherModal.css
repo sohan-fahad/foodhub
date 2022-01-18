@@ -1,0 +1,23 @@
+.VoucherModal {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.voucher_modal_wrapper {
+  width: 750px;
+  display: flex;
+  justify-content: center;
+}
+.voucher_modal_wrapper h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--title);
+  margin-bottom: 30px;
+}
+
+.voucher_modal_wrapper p {
+  font-size: 16px;
+  color: #646464;
+  margin-bottom: 20px;
+}

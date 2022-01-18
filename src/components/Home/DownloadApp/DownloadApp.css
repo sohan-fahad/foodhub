@@ -1,0 +1,90 @@
+.DownloadApp {
+  padding-bottom: 100px;
+  height: auto;
+  display: flex;
+}
+.DownloadApp h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--title);
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.DownloadApp p {
+  font-size: 16px;
+  text-align: center;
+  color: #646464;
+  margin-bottom: 60px;
+  text-transform: capitalize;
+}
+.DownloadApp .App_info {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+.DownloadApp .App_info h3 {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: left;
+}
+.DownloadApp .App_info p {
+  color: var(--primary);
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+.DownloadApp .AppLinkImg {
+  width: 80%;
+}
+
+@media screen and (max-width: 991px) {
+  .DownloadApp {
+    position: relative;
+    top: 100px;
+  }
+  .DownloadApp .App_info h3 {
+    text-align: center;
+  }
+  .DownloadApp .App_info p {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 0;
+  }
+  .DownloadApp .AppLinkImg {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .DownloadApp {
+    position: relative;
+    top: 200px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .DownloadApp {
+    position: static;
+    padding-bottom: 50px;
+  }
+  .DownloadApp h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .DownloadApp p {
+    margin-bottom: 30px;
+  }
+  .DownloadApp .App_info h3 {
+    font-size: 24px;
+  }
+  .DownloadApp .App_info p {
+    font-size: 16px;
+  }
+  .DownloadApp .AppLinkImg {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

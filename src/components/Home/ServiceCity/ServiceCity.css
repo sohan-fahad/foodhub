@@ -1,0 +1,26 @@
+.city_card {
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.city_card h4 {
+  position: absolute;
+  bottom: 5px;
+  padding-left: 5px;
+  color: #fff;
+  font-style: 16px;
+}
+.city_card .arrow {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+}

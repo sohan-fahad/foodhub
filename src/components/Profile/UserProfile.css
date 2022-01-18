@@ -1,0 +1,137 @@
+.UserProfile {
+  height: auto;
+  padding: 100px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user_profile_wrapper {
+  padding: 40px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.user_profile_info {
+  width: 100%;
+}
+.user_profile_info:first-child {
+  margin-bottom: 100px;
+}
+.user_profile_info h3 {
+  color: var(--title);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.user_profile_info form {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+.user_profile_info form input {
+  width: 100%;
+  padding: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #646464;
+  outline: none;
+}
+
+.user_profile_info form input[type="submit"] {
+  padding: 20px 30px;
+  color: #ffff;
+  background-color: var(--primary);
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  width: 30%;
+  margin-top: 20px;
+}
+
+.user_profile_password {
+  position: relative;
+}
+
+.user_profile_password #show_confirm_password {
+  position: absolute;
+  top: 196px;
+  right: 20px;
+  font-size: 16px;
+  color: #646464;
+  cursor: pointer;
+}
+.user_profile_password #show_password {
+  position: absolute;
+  top: 110px;
+  right: 20px;
+  font-size: 16px;
+  color: #646464;
+  cursor: pointer;
+}
+
+.user_profile_payment {
+  margin-top: 100px;
+}
+.user_profile_payment h3 {
+  color: var(--title);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+.user_profile_payment_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.user_profile_payment_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user_profile_payment_wrapper .user_profile_payment_info img {
+  width: 50px;
+  margin-left: 15px;
+}
+.user_profile_payment_wrapper .user_profile_payment_info p {
+  margin: 0;
+  padding-left: 15px;
+  color: #646464;
+}
+.user_profile_payment_wrapper button {
+  border: none;
+  color: var(--primary);
+  font-size: 16px;
+  background-color: #ffff;
+}
+
+@media screen and (max-width: 991px) {
+  .UserProfile {
+    padding-bottom: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .UserProfile {
+    padding: 0;
+    position: relative;
+    top: 80px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .UserProfile {
+    padding: 50px 20px;
+    position: static;
+  }
+  .user_profile_info h3,
+  .user_profile_payment h3 {
+    text-align: left;
+  }
+  .user_profile_info form input[type="submit"] {
+    width: 50%;
+  }
+}

@@ -1,0 +1,11 @@
+@media screen and (max-width: 768px) {
+  .FindeRestaurant {
+    position: relative;
+    top: 100px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .FindeRestaurant {
+    position: static;
+  }
+}

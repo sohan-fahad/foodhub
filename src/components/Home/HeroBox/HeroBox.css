@@ -1,0 +1,139 @@
+.hero_box {
+  height: 700px;
+  background-image: url("../../../images/headerBG.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+}
+.hero_container {
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+.hero_container h1 {
+  font-size: 50px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.hero_container p {
+  font-size: 20px;
+  color: var(--title);
+  margin-top: 15px;
+}
+
+.location_container {
+  width: 80%;
+  height: 100px;
+  background-color: #fff;
+  padding: 10px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+.get_location {
+  width: 70%;
+  height: 70px;
+  border: 1px solid rgb(34, 34, 34);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.get_location input {
+  width: 85%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+.location_gps {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.get_restaurant {
+  width: 29%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.get_restaurant_btn {
+  width: 92%;
+  border: none;
+  background-color: var(--primary);
+  color: #fff;
+  height: 70px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 991px) {
+  .hero_box {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-image: ; */
+    height: auto;
+    padding: 50px 0;
+  }
+  .get_location {
+    width: 50%;
+  }
+  .get_restaurant {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .hero_box {
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-image: ; */
+    height: auto;
+    padding: 50px 0;
+  }
+  .hero_container {
+    height: auto;
+  }
+  .hero_container h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .hero_container p {
+    margin-bottom: 0;
+  }
+  .location_container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--title) 00;
+    margin-top: 30px;
+    width: 100%;
+  }
+  .get_location {
+    width: 100%;
+  }
+  .get_location input {
+    width: 80%;
+  }
+  .get_restaurant {
+    width: 100%;
+  }
+  .get_restaurant_btn {
+    width: 100%;
+    color: #fff;
+    height: 50px;
+    margin-top: 10px;
+  }
+  .location_gps {
+    background-color: #fff;
+    height: 45px;
+    width: 20%;
+  }
+}

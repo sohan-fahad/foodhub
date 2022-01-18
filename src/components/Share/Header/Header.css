@@ -1,0 +1,106 @@
+.Header {
+  height: auto;
+  background-color: #ffff;
+  box-shadow: 0px 5px 5px rgba(128, 128, 128, 0.274);
+  padding: 30px 0;
+}
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.deliverPlace_container2 {
+  display: none;
+}
+.header_container h3 {
+  color: var(--primary);
+}
+.header_container a {
+  text-decoration: none;
+  border-right: 1px solid #4444;
+  padding-right: 20px;
+  margin-left: 20px;
+  color: var(--title);
+  font-weight: 700;
+  font-size: 16px;
+}
+.header_container a:visited {
+  color: var(--title);
+}
+.header_container .brand_Logo {
+  border: none;
+  padding-right: 0px;
+  color: var(--primary);
+  font-size: 25px;
+}
+.header_container a:last-child {
+  border: none;
+  padding-right: 0px;
+  color: var(--title);
+  font-size: 25px;
+}
+.header_container a:hover {
+  color: var(--primary);
+}
+.header_container a span {
+  margin-left: 10px;
+  display: none;
+}
+.user_profile {
+  border-right: 1px solid #4444;
+  padding-right: 20px;
+}
+.user_profile a {
+  padding: 10px 15px;
+  margin: 0;
+  color: var(--title);
+  font-size: 16px !important;
+  border: none !important;
+  padding-right: 0 !important;
+}
+.user_profile a:focus {
+  color: var(--title) !important;
+}
+.user_profile a:active {
+  background-color: #fff !important;
+}
+.user_menu_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user_menu_container i {
+  font-size: 25px;
+  color: var(--title);
+}
+.Header .dropdown-menu {
+  inset: 0 auto auto -40px !important;
+}
+@media screen and (max-width: 768px) {
+  .header_container .deliverPlace_container1 {
+    display: none;
+  }
+  .deliverPlace_container2 {
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .deliverPlace_container2 .DeliverPlace .user_location1 {
+    background-color: #fff !important;
+    border: none;
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Header {
+    padding: 15px 0;
+  }
+  .Header h3 {
+    margin-bottom: 0;
+  }
+  .deliverPlace_container2 .DeliverPlace .user_location1 {
+    font-size: 14px;
+  }
+}

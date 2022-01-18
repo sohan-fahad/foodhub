@@ -1,0 +1,40 @@
+.VoucherList {
+  height: auto;
+  padding: 100px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.VoucherList .voucher_list_wrapper {
+  width: 700px;
+}
+.VoucherList .voucher_list_wrapper h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--title);
+  text-align: center;
+  margin-bottom: 40px;
+}
+.VoucherList .voucher_list_wrapper h3 {
+  color: var(--title);
+}
+
+@media screen and (max-width: 991px) {
+  .VoucherList {
+    padding-bottom: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .VoucherList {
+    padding: 0 30px;
+    position: relative;
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .VoucherList {
+    position: static;
+    padding: 50px 30px;
+  }
+}

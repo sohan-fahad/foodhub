@@ -1,0 +1,38 @@
+.RestaurantRegStep {
+  margin: 100px 0;
+}
+
+.RestaurantRegStep h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--title);
+  text-align: center;
+}
+.RestaurantRegStep_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.RestaurantRegStep_card img {
+  width: 50px;
+}
+
+.RestaurantRegStep_card p {
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .RestaurantRegStep {
+    margin: 100px 0 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .RestaurantRegStep {
+    margin: 50px 0 0;
+  }
+  .RestaurantRegStep h1 {
+    font-size: 24px;
+  }
+}

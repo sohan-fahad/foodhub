@@ -1,0 +1,62 @@
+.HelpWithOrders_btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.HelpWithOrders_btn button {
+  background-color: #fff;
+  color: var(--title);
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px 40px;
+  border: none;
+  transition: 0.1s ease-in;
+}
+
+.HelpWithOrders_btn button:hover {
+  border-bottom: 4px solid var(--primary);
+  color: var(--primary);
+}
+.HelpWithOrders_btn .active_help_order_btn {
+  border-bottom: 4px solid var(--primary);
+  color: var(--primary);
+}
+
+.HelpWithOrders_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.HelpWithOrders_past_order {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 25px;
+}
+
+.HelpWithOrders_past_order h4 {
+  font-size: 20px;
+  color: var(--title);
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.HelpWithOrders_past_order button {
+  border: none;
+  background-color: var(--primary);
+  padding: 5px 15px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.HelpWithOrders_another_order {
+  border: none;
+  background-color: #fff;
+  margin: 0 auto;
+  width: 90%;
+  padding-bottom: 15px;
+  border-bottom: 0.2px solid #646464;
+}

@@ -1,0 +1,73 @@
+.HelpCenter {
+  height: auto;
+  padding: 100px 0;
+  position: relative;
+}
+
+.HelpCenter h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.HelpCenter .help_btn .get_help_btn {
+  width: 100%;
+  border: none;
+  background-color: #fff;
+  padding: 15px 60px;
+  box-shadow: 1px 1px 5px rgba(204, 204, 204, 0.692);
+  text-align: left;
+  font-size: 16px;
+  transition: 0.2s ease-in;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  color: var(--title);
+}
+.HelpCenter .help_btn .active_help_btn {
+  width: 100%;
+  border: none;
+  background-color: var(--primary);
+  padding: 15px 60px;
+  box-shadow: none;
+  text-align: left;
+  font-size: 16px;
+  transition: 0.2s ease-in;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.HelpCenter .help_btn .get_help_btn:last-child {
+  margin-bottom: 0;
+}
+
+.HelpCenter .help_btn .get_help_btn i {
+  font-size: 20px;
+}
+
+.HelpCenter .help_btn .get_help_btn:hover {
+  box-shadow: none;
+  background-color: var(--primary);
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .HelpCenter {
+    padding: 0;
+    position: relative;
+    top: 100px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .HelpCenter {
+    padding: 50px 0;
+    position: static;
+  }
+  .HelpCenter .help_btn .get_help_btn {
+    padding: 15px 30px;
+  }
+}

@@ -1,0 +1,10 @@
+.HelpRefundOrders .accordion-button:focus {
+  z-index: 3;
+  border-color: var(--primary) !important;
+  outline: 0;
+}
+
+.HelpRefundOrders .accordion-button:not(.collapsed) {
+  color: var(--primary) !important;
+  background-color: #fff !important;
+}

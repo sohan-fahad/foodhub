@@ -1,0 +1,28 @@
+.blog_card {
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgb(224, 224, 224);
+}
+.blog_card img {
+  border-radius: 10px 10px 0 0;
+}
+
+.blog_info {
+  padding: 30px 20px;
+}
+.blog_info h3 {
+  font-size: 24px !important;
+  color: var(--title);
+  font-weight: 700;
+  text-align: center !important;
+}
+.blog_info h5 {
+  font-size: 18px;
+  color: var(--primary);
+  text-align: center !important;
+  margin: 20px 0;
+}
+.blog_info p {
+  margin: 0px !important;
+  text-align: left !important;
+  text-align: center !important;
+}

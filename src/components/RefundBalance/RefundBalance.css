@@ -1,0 +1,145 @@
+.RefundBalance {
+  height: auto;
+  padding: 100px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.refund_balance_payment_method {
+  box-shadow: 1px 1px 5px rgb(218, 218, 218);
+  padding: 40px;
+}
+.refund_balance_payment_method .refund_balance_payment_title {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.refund_balance_payment_method .refund_balance_payment_title h3 {
+  color: var(--title);
+  font-size: 24px;
+  margin-left: 20px;
+  font-weight: 700;
+}
+
+.refund_balance_payment_method .refund_balance_payment_title img {
+  width: 25px;
+}
+.refund_balance_check_out {
+  padding: 40px;
+  background-color: var(--primary);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refund_balance_check_out_info p {
+  color: #ffff;
+  margin-bottom: 30px;
+  margin-top: 0;
+  font-size: 16px;
+}
+.refund_balance_check_out_info a {
+  color: var(--title);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 15px;
+  background-color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.RefundBalance .refund_balance_amount_wrapper {
+  box-shadow: 1px 1px 5px rgb(218, 218, 218);
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.RefundBalance .refund_balance_amount_wrapper h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--title);
+  margin-bottom: 50px;
+}
+
+.RefundBalance .refund_balance_amount_wrapper p {
+  font-size: 16px;
+  color: #646464;
+  margin-bottom: 20px;
+}
+
+.RefundBalance .refund_balance_amount_wrapper h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--title);
+  margin: 0;
+}
+
+.refund_balance_amount_wrapper img {
+  width: 30px;
+}
+.refund_balance_terms {
+  box-shadow: 1px 1px 5px rgb(218, 218, 218);
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.refund_balance_terms_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.refund_balance_terms_wrapper .refund_balance_terms_img {
+  padding: 10px;
+  background-color: var(--primary);
+  border-radius: 5px;
+  height: 50px;
+  margin-right: 30px;
+}
+.refund_balance_terms_wrapper .refund_balance_terms_img img {
+  width: 30px;
+}
+
+.refund_balance_terms_wrapper .refund_balance_terms_info h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 20px 0;
+  color: var(--primary);
+}
+.refund_balance_terms_wrapper .refund_balance_terms_info p:first-child {
+  font-size: 16px;
+  color: var(--title);
+}
+.refund_balance_terms_wrapper .refund_balance_terms_info p:last-child {
+  font-size: 16px;
+  color: #646464;
+}
+
+.refund_balance_terms i {
+  color: var(--primary);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+  .RefundBalance {
+    padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .RefundBalance {
+    padding: 0;
+    position: relative;
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .RefundBalance {
+    position: static;
+    padding: 50px 0;
+  }
+}

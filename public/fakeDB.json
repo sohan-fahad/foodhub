@@ -1,0 +1,42 @@
+[
+{
+"id": 1,
+"name": "Dhaka",
+"cityImg": "https://i.ibb.co/tYc4gvd/Untitled-4.jpg"
+},
+{
+"id": 2,
+"name": "Chittagon",
+"cityImg": "https://i.ibb.co/tYc4gvd/Untitled-4.jpg"
+},
+{
+"id": 3,
+"name": "Rajshahi",
+"cityImg": "https://i.ibb.co/tYc4gvd/Untitled-4.jpg"
+},
+{
+"id": 4,
+"name": "Khulna",
+"cityImg": "https://i.ibb.co/tYc4gvd/Untitled-4.jpg"
+},
+{
+"id": 5,
+"name": "Barishal",
+"cityImg": "https://i.ibb.co/tYc4gvd/Untitled-4.jpg"
+},
+{
+"id": 6,
+"name": "Rangpur",
+"cityImg": "https://i.ibb.co/tYc4gvd/Untitled-4.jpg"
+},
+{
+"id": 7,
+"name": "Feni",
+"cityImg": "https://i.ibb.co/tYc4gvd/Untitled-4.jpg"
+},
+{
+"id": 8,
+"name": "Cumilla",
+"cityImg": "https://i.ibb.co/tYc4gvd/Untitled-4.jpg"
+}
+]
