@@ -2,16 +2,10 @@
   padding: 100px 0 0;
 }
 
-@media screen and (max-width: 991px) {
-  .RestaurantRegistration {
-    padding: 100px 10px 0;
-  }
-}
 @media screen and (max-width: 768px) {
   .RestaurantRegistration {
-    padding: 0;
-    position: relative;
-    top: 100px;
+    position: static;
+    padding-bottom: 100px;
   }
 }
 @media screen and (max-width: 600px) {

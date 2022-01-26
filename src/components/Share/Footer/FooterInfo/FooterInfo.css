@@ -42,9 +42,8 @@
 }
 @media screen and (max-width: 768px) {
   .FooterInfo {
-    position: relative;
-    top: 200px;
-    padding-bottom: 150px;
+    position: static;
+    padding-bottom: 100px;
   }
 }
 @media screen and (max-width: 600px) {

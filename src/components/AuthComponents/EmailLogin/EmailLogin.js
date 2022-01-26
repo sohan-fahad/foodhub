@@ -6,17 +6,23 @@ import emailImg from "../../../images/email .png";
 import { useForm } from "react-hook-form";
 import useApi from "../../../Hooks/useApi";
 import { useNavigate } from "react-router";
-import useAuthentication from "../../../Hooks/useAuthentication";
 import { Spinner } from "react-bootstrap";
 
 const EmailLogin = () => {
-  const { register, handleSubmit, watch } = useForm();
+  const { register, handleSubmit, trigger, watch } = useForm();
   const { foodHubAPI } = useApi();
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(true);
+  const [email, setEmail] = useState("");
 
-  const { handleEmail, setAuth, email } = useAuthentication();
+  const handleEmail = (e) => {
+    const user_email = e.target.value;
+    setEmail(user_email);
+  };
+
+
+
 
   const onSubmit = (data) => {
     setIsLoading(true);
@@ -31,15 +37,14 @@ const EmailLogin = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setAuth(true);
 
         localStorage.setItem("email", email);
         if (data.statusCode === 404) {
           setIsLoading(false);
-          navigate("/registration#registration");
+          navigate("/auth/email/registration");
         } else {
           setIsLoading(false);
-          navigate("/login/user#login");
+          navigate("/auth/email/password");
         }
       });
   };
@@ -59,16 +64,18 @@ const EmailLogin = () => {
               id=""
               placeholder="Email"
               required
-              onChange={handleEmail}
+              onKeyDown={handleEmail}
             />
             <input type="submit" value="CONTINUE" />
           </form>
         </div>
       )}
       {!isLoading && (
-        <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
+        <div>
+          <Spinner animation="border" role="status" >
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
       )}
     </div>
   );

@@ -1,0 +1,15 @@
+.RestaurantItemsSection {
+  padding-top: 50px;
+}
+
+.RestaurantItemsSection h3 {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.RestaurantItemsSection p {
+  font-size: 16px;
+  color: var(--secondary);
+}

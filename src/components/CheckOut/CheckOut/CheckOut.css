@@ -1,0 +1,19 @@
+.CheckOut {
+  padding: 100px 0;
+}
+
+@media screen and (max-width: 991px) {
+  .CheckOut {
+    padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .CheckOut {
+    padding-bottom: 80px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .CheckOut {
+    padding: 50px 0;
+  }
+}

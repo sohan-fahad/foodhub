@@ -61,24 +61,19 @@
 
 @media screen and (max-width: 991px) {
   .VerifyCode {
-    padding: 0;
-    position: relative;
-    top: 100px;
-    padding-bottom: 100px;
+    position: static;
+    padding-bottom: 20px;
   }
 }
 @media screen and (max-width: 768px) {
   .VerifyCode {
-    padding: 0;
-    position: relative;
-    top: 100px;
-    padding-bottom: 0;
+    position: static;
+    padding-bottom: 100px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .VerifyCode {
-    position: static;
     padding: 50px 10px;
   }
 }

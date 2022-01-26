@@ -44,7 +44,7 @@ const HelpCenter = () => {
                 }
                 onClick={() => setHelpCenter("request")}
               >
-                <i class="fas fa-hands-helping me-4"></i>My support requests
+                <i className="fas fa-hands-helping me-4"></i>My support requests
               </button>
             </div>
           </div>

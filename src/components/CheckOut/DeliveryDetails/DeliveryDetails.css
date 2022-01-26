@@ -1,0 +1,204 @@
+.DeliveryDetails {
+  box-shadow: 1px 1px 30px rgba(219, 219, 219, 0.452);
+  padding: 30px;
+}
+.DeliveryDetails_title {
+  display: flex;
+  align-items: center;
+}
+
+.DeliveryDetails_title h3 {
+  color: var(--title);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.DeliveryDetails_title span {
+  font-size: 20px;
+  background-color: var(--primary);
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.DeliveryDetails_contactless {
+  background-color: #f1f2f3;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 5px;
+  border-left: 5px solid var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.DeliveryDetails_contactless h5 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--title);
+}
+.DeliveryDetails_contactless p {
+  margin-bottom: 0;
+  font-size: 16px;
+  color: var(--secondary);
+}
+
+.DeliveryDetails_switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+.DeliveryDetails_switch {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px; /* 1 */
+  height: 1em;
+  width: 2em;
+  background: #bdb9a6;
+  border-radius: 1em;
+}
+
+.DeliveryDetails_switch div {
+  height: 1em;
+  width: 1em;
+  border-radius: 1em;
+  background: #fff;
+  box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.DeliveryDetails_switch input:checked + div {
+  background-color: var(--primary);
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+
+.DeliveryDetails_time {
+  margin-top: 40px;
+}
+.DeliveryDetails_time h5 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--title);
+}
+
+.DeliveryDetails_time select {
+  padding: 10px;
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+}
+
+.DeliveryDetails_address {
+  margin-top: 30px;
+}
+.DeliveryDetails_address h5 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--title);
+  margin-bottom: 20px;
+}
+.DeliveryDetails_address_map {
+  box-shadow: 1px 1px 10px rgba(219, 219, 219, 0.452);
+}
+.DeliveryDetails_address_info {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.DeliveryDetails_address_info h5 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--title);
+  margin-bottom: 0;
+}
+.DeliveryDetails_address_info p {
+  font-size: 16px;
+  color: var(--secondary);
+  margin-bottom: 0;
+}
+
+.DeliveryDetails_address_info button {
+  background-color: #fff;
+  border: none;
+  color: var(--primary);
+}
+
+.DeliveryDetails_additional_info {
+  margin-top: 30px;
+}
+.DeliveryDetails_additional_info input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid var(--secondary);
+}
+.DeliveryDetails_additional_info textarea {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  height: 150px;
+  border: 1px solid var(--secondary);
+}
+
+.DeliveryDetails_labels {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.DeliveryDetails_label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+.DeliveryDetails_label p {
+  font-size: 16px;
+  margin-top: 10px;
+  color: var(--secondary);
+}
+.DeliveryDetails_label i {
+  padding: 20px;
+  border-radius: 50%;
+  color: var(--primary);
+  box-shadow: 1px 1px 10px rgb(218, 218, 218);
+  font-size: 20px;
+  cursor: pointer;
+}
+.DeliveryDetails form input[type="radio"] {
+  display: none;
+}
+
+.DeliveryDetails form input[type="radio"]:checked ~ label i {
+  background-color: var(--primary);
+  color: #fff;
+}
+/* .DeliveryDetails_label_others {
+  display: none;
+} */
+
+.DeliveryDetails_label_others input {
+  padding: 10px;
+  border: 1px solid var(--secondary);
+  outline: none;
+  width: 50%;
+}
+
+.DeliveryDetails_submit {
+  background-color: var(--primary);
+  border: none;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 20px;
+}

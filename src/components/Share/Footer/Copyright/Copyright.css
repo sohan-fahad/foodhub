@@ -20,7 +20,7 @@
 }
 @media screen and (max-width: 768px) {
   .Copyright {
-    position: relative;
+    position: static;
     top: 179px;
   }
 }

@@ -24,7 +24,7 @@ const Login = () => {
           <WithLogin icon={facebook_icon} btnName="Facebook"></WithLogin>
         </div>
         <h5 className="text-center p-0 my-3">OR</h5>
-        <Nav.Link as={Link} to="/login/email" className="email_login_btn">
+        <Nav.Link as={Link} to="/auth/email" className="email_login_btn">
           CONTINUE WITH EMAIL
         </Nav.Link>
         <p className="login_term_condition">

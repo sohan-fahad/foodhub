@@ -22,7 +22,6 @@ const RecommendedSliders = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -31,6 +30,8 @@ const RecommendedSliders = () => {
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
+          dots: true,
+
         },
       },
       {
@@ -38,6 +39,8 @@ const RecommendedSliders = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
+
         },
       },
     ],

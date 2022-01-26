@@ -26,8 +26,7 @@
 }
 @media screen and (max-width: 768px) {
   .FooterSocialIcon {
-    position: relative;
-    top: 180px;
+    position: static;
   }
   .footer_icon_wrapper {
     display: flex;

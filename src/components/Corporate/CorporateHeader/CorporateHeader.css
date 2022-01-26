@@ -1,0 +1,16 @@
+.CorporateHeader button {
+    border: none;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 600px) {
+    .CorporateHeader button:first-child {
+        display: none;
+    }
+    
+}

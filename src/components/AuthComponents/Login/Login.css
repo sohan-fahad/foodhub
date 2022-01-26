@@ -62,15 +62,10 @@
 @media screen and (max-width: 991px) {
   .Login {
     height: auto;
-    padding-top: 100px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .Login {
     padding-bottom: 0;
-    padding-top: 150px;
   }
 }
+
 @media screen and (max-width: 600px) {
   .Login {
     padding-bottom: 50px;

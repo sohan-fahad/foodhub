@@ -1,0 +1,77 @@
+.CorporateVisibility {
+    padding-bottom: 100px;
+}
+
+.CorporateVisibility .CorporateVisibility_info h3 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--title);
+    text-transform: uppercase;
+}
+
+.CorporateVisibility .CorporateVisibility_info p {
+    font-size: 16px;
+    color: var(--secondary);
+    margin-top: 30px;
+}
+
+.CorporateVisibility_info ul {
+    padding: 0;
+    margin-top: 50px;
+}
+.CorporateVisibility_info ul li {
+    list-style: none;
+    margin-bottom: 20px;
+}
+.CorporateVisibility_info ul li p{
+    text-align: left;
+}
+
+.CorporateVisibility_list {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.CorporateVisibility_list div {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--primary);
+}
+
+.CorporateVisibility_info button {
+    border: none;
+    background-color: var(--primary);
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 991px) {
+    .CorporateVisibility {
+        padding-bottom: 20px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .CorporateVisibility {
+        padding-bottom: 100px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .CorporateVisibility {
+        padding-bottom: 50px;
+    }
+    .CorporateVisibility .CorporateVisibility_info h3 {
+        font-size: 24px;
+    }
+    .CorporateVisibility .CorporateVisibility_info p {
+        text-align: center;
+    }
+    .CorporateVisibility_info ul li p{
+        text-align: left !important;
+    }   
+}

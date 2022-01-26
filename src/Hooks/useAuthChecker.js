@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import checkAuth from "../store/action/checkAuth";
 
-const useHeader = () => {
+const useAuthChecker = () => {
   const dispatch = useDispatch();
   const [header, setHeader] = useState(false);
 
@@ -17,4 +17,4 @@ const useHeader = () => {
   return { header };
 };
 
-export default useHeader;
+export default useAuthChecker;

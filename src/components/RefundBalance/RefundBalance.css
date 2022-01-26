@@ -131,9 +131,7 @@
 }
 @media screen and (max-width: 768px) {
   .RefundBalance {
-    padding: 0;
-    position: relative;
-    top: 100px;
+    padding: 80px;
   }
 }
 

@@ -17,14 +17,14 @@
 
 @media screen and (max-width: 991px) {
   .UserOrderList {
-    padding-bottom: 0;
+    height: auto;
+    padding: 100px 0 50px;
   }
 }
 @media screen and (max-width: 768px) {
   .UserOrderList {
-    padding: 0 30px;
-    position: relative;
-    top: 100px;
+    padding: 80px 0;
+    position: static;
   }
 }
 

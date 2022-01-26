@@ -1,0 +1,96 @@
+.PaymentDetails {
+  box-shadow: 1px 1px 30px rgba(219, 219, 219, 0.452);
+  padding: 30px;
+  margin-top: 50px;
+}
+
+.PaymentDetails_credit_card_wrapper {
+  border: 1px solid var(--secondary);
+  padding: 15px;
+  margin-top: 20px;
+}
+.PaymentDetails_check {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.PaymentDetails_check_active {
+  background-color: var(--primary);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+.PaymentDetails_credit_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.PaymentDetails_credit_card label {
+  cursor: pointer;
+}
+
+.PaymentDetails_credit_card_form {
+  padding: 25px;
+}
+.PaymentDetails_credit_card_form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--secondary);
+  border-radius: 5px;
+  outline: none;
+}
+
+.PaymentDetails_cash_wrapper {
+  border: 1px solid var(--secondary);
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.PaymentDetails_cash {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.PaymentDetails_cash_info {
+  margin-top: 20px;
+}
+
+.PaymentDetails_cash_info h5 {
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.PaymentDetails_cash_info p {
+  font-size: 16px;
+  color: var(--secondary);
+}
+
+.PaymentDetails_bkash_wrapper {
+  border: 1px solid var(--secondary);
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.PaymentDetails_bkash_info {
+  margin-top: 20px;
+}
+
+.PaymentDetails_bkash_info h5 {
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.PaymentDetails_bkash_info p {
+  font-size: 16px;
+  color: var(--secondary);
+}

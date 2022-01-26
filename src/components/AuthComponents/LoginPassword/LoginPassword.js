@@ -7,9 +7,10 @@ import { Nav, Spinner } from "react-bootstrap";
 import useMethod from "../../../Hooks/useMethod";
 import useApi from "../../../Hooks/useApi";
 import { useForm } from "react-hook-form";
-import useAuthentication from "../../../Hooks/useAuthentication";
 import { useDispatch } from "react-redux";
 import login from "../../../store/action/login";
+import checkAuth from "../../../store/action/checkAuth";
+import Cookies from "js-cookie";
 
 const LoginPassword = () => {
   const email = localStorage.getItem("email");
@@ -17,7 +18,6 @@ const LoginPassword = () => {
   const { showPassword } = useMethod();
   const { foodHubAPI } = useApi();
   const navigate = useNavigate();
-  const { setUser, user, setUserInfo, userInfo } = useAuthentication();
   const [isLoading, setIsLoading] = useState(true);
 
   const { register, handleSubmit, watch, reset } = useForm();
@@ -46,11 +46,11 @@ const LoginPassword = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "success") {
-          console.log(data.payload);
-
+          Cookies.set("__act", data?.payload?.token);
+          Cookies.set("__rt", data?.payload?.refreshToken);
           localStorage.setItem("user", JSON.stringify(data));
-          dispatch(login(data.payload));
-          navigate("/user/name");
+          dispatch(checkAuth(data.payload));
+          navigate("/user/profile");
           reset();
         } else {
           alert("Error");
@@ -76,7 +76,7 @@ const LoginPassword = () => {
               id="showInputPassword"
               placeholder="Password"
               {...register("password")}
-              onChange={handlePassword}
+              onKeyDown={handlePassword}
               required
             />
             <label
@@ -95,7 +95,6 @@ const LoginPassword = () => {
       {!isLoading && (
         <div
           className="d-flex justify-content-center align-items-center"
-          style={{ height: "100vw" }}
         >
           <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>

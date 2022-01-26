@@ -5,7 +5,7 @@ import FooterSocialIcon from "../FooterSocialIcon/FooterSocialIcon";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="Footer">
       <FooterInfo></FooterInfo>
       <FooterSocialIcon></FooterSocialIcon>
       <Copyright></Copyright>

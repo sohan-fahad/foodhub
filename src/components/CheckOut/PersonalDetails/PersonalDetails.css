@@ -1,0 +1,47 @@
+.PersonalDetails {
+  box-shadow: 1px 1px 30px rgba(219, 219, 219, 0.452);
+  padding: 30px;
+  margin-top: 50px;
+}
+
+.PersonalDetails_title {
+  display: flex;
+  align-items: center;
+}
+
+.PersonalDetails_title h3 {
+  color: var(--title);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.PersonalDetails_title span {
+  font-size: 20px;
+  background-color: var(--primary);
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.PersonalDetails form {
+  margin-top: 20px;
+}
+.PersonalDetails form input {
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid var(--secondary);
+}
+.PersonalDetails form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  display: block;
+  border: none;
+  background-color: var(--primary);
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}

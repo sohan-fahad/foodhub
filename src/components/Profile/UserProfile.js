@@ -2,11 +2,14 @@ import React from "react";
 import "./UserProfile.css";
 import bkashImg from "../../images/bKashIcon.png";
 import useMethod from "../../Hooks/useMethod";
-import useAuthentication from "../../Hooks/useAuthentication";
+import { useSelector } from "react-redux";
 
 const UserProfile = () => {
   const { showPassword } = useMethod();
-  const { userInfo } = useAuthentication();
+
+  const { email, firstName, lastName, phone } = useSelector(
+    (state) => state.authCheckReducer
+  );
   return (
     <div className="UserProfile" id="profile">
       <div className="user_profile_wrapper">
@@ -17,25 +20,25 @@ const UserProfile = () => {
               type="email"
               name="email"
               placeholder="Email"
-              defaultValue={userInfo.email}
+              defaultValue={email}
             />
             <input
               type="text"
               name="fname"
               placeholder="First Name"
-              defaultValue={userInfo.firstName}
+              defaultValue={firstName}
             />
             <input
               type="text"
               name="lname"
               placeholder="Last Name"
-              defaultValue={userInfo.lastName}
+              defaultValue={lastName}
             />
             <input
               type="number"
               name="mobile"
               placeholder="Mobile Number"
-              defaultValue={userInfo.phone}
+              defaultValue={phone}
             />
             <input type="submit" value="SAVE" />
           </form>

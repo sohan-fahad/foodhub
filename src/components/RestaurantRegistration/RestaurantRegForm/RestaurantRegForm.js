@@ -1,7 +1,36 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import useApi from "../../../Hooks/useApi";
 import "./RestaurantRegForm.css";
+import registerRestaurant from "../../../store/action/registerRestaurant";
 
 const RestaurantRegForm = () => {
+  const { register, handleSubmit, watch, reset } = useForm();
+  const { foodHubAPI } = useApi();
+
+  const dispatch = useDispatch();
+
+  const onSubmit = (data) => {
+    fetch(`${foodHubAPI}/user/register-restaurant`,{
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === "success") {
+          dispatch(registerRestaurant(data.payload));
+          reset()
+          // localStorage.setItem("restaurantInfo", JSON.stringify(data));
+        } else {
+          alert("error");
+        }
+      });
+  };
+
   return (
     <div className="RestaurantRegForm">
       <div className="container">
@@ -9,7 +38,7 @@ const RestaurantRegForm = () => {
         <p>
           The info you provide is safe and it’ll help us get you set up faster.
         </p>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
           <div className="RestaurantRegForm_wrapper">
             <div className="RestaurantRegForm_details">
               <h3>Your Restaurant</h3>
@@ -18,13 +47,23 @@ const RestaurantRegForm = () => {
               <label>
                 Restaurant Name <span className="brand_color">*</span>
               </label>
-              <input type="text" placeholder="Enter your restaurant name" />
+              <input
+                type="text"
+                placeholder="Enter your restaurant name"
+                {...register("name")}
+                required
+              />
               <label>
                 Restaurant Address <span className="brand_color">*</span>
               </label>
-              <input type="text" placeholder="Enter your restaurant address" />
+              <input
+                type="text"
+                placeholder="Enter your restaurant address"
+                {...register("address")}
+                required
+              />
               <label>What is the average cost of a meal for one person?</label>
-              <select name="" id="">
+              <select name="" id="" {...register("average_cost")}>
                 <option value="$">$</option>
                 <option value="$$">$$</option>
                 <option value="$$$">$$$</option>
@@ -39,31 +78,57 @@ const RestaurantRegForm = () => {
               <div className="row">
                 <div className="col-lg-6 col-12">
                   <label>
-                    Your Role <span className="brand_color">*</span>
+                    Your first name <span className="brand_color">*</span>
                   </label>
-                  <select name="" id="">
-                    <option value="$">$</option>
-                    <option value="$$">$$</option>
-                    <option value="$$$">$$$</option>
-                  </select>
+                  <input
+                    type="text"
+                    placeholder="Enter your first name"
+                    {...register("firstName")}
+                    required
+                  />
                 </div>
                 <div className="col-lg-6 col-12">
                   <label>
-                    Your full name <span className="brand_color">*</span>
+                    Your last name <span className="brand_color">*</span>
                   </label>
-                  <input type="text" placeholder="Enter your full name" />
+                  <input
+                    type="text"
+                    placeholder="Enter your last name"
+                    {...register("lastName")}
+                    required
+                  />
                 </div>
+                <div className="col-12">
+                  <label>
+                    Email Address <span className="brand_color">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Enter your Email name"
+                    {...register("email")}
+                    required
+                  />
+                </div>
+                <div className="col-lg-6 col-12">
+                  <label>
+                    Your Role <span className="brand_color">*</span>
+                  </label>
+                  <select name="" id="" {...register("role")} required>
+                    <option value="1">Manager</option>
+                    <option value="2">Supervisor</option>
+                  </select>
+                </div>
+
                 <div className="col-lg-6 col-12">
                   <label>
                     Mobile Number <span className="brand_color">*</span>
                   </label>
-                  <input type="text" placeholder="01XXXXXXXXX" />
-                </div>
-                <div className="col-lg-6 col-12">
-                  <label>
-                    Email Address <span className="brand_color">*</span>
-                  </label>
-                  <input type="text" placeholder="Enter your Email name" />
+                  <input
+                    type="number"
+                    placeholder="01XXXXXXXXX"
+                    {...register("phone")}
+                    required
+                  />
                 </div>
               </div>
               <button type="submit">Register Now</button>

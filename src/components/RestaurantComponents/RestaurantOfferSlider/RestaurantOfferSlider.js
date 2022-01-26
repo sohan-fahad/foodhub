@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import OfferSliderCard from "../OfferSliderCard/OfferSliderCard";
 import "./RestaurantOfferSlider.css";
+import useApi from "../../../Hooks/useApi";
+import Cookies from "js-cookie";
+import axios from "axios";
 
 const RestaurantOfferSlider = () => {
   const offerSlider = [
@@ -43,7 +46,7 @@ const RestaurantOfferSlider = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -52,6 +55,7 @@ const RestaurantOfferSlider = () => {
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
+          dots: true,
         },
       },
       {
@@ -59,10 +63,29 @@ const RestaurantOfferSlider = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
         },
       },
     ],
   };
+
+  const [restaurant, setRestaurant] = useState([]);
+  const { foodHubAPI } = useApi();
+
+  const token = Cookies.get("__act");
+  const refreshToken = Cookies.get("__rt");
+
+  useEffect(() => {
+    if (token) {
+      axios.get(`${foodHubAPI}/admin/restaurants`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+      })
+        .then((res) => console.log(res));
+    }
+  }, []);
+
   return (
     <div className="RestaurantOfferSlider">
       <div className="container">

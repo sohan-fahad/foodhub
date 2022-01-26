@@ -8,7 +8,7 @@ const RecommendedSlider = ({ sliderItem }) => {
       <div className="title">
         <h5>{sliderItem?.name}</h5>
         <h5>
-          <i class="fas fa-star me-2" style={{ color: "#fdc50e" }}></i>
+          <i className="fas fa-star me-2" style={{ color: "#fdc50e" }}></i>
           {sliderItem?.rating}/5 <span className="second_title">(12k)</span>
         </h5>
       </div>
@@ -20,7 +20,7 @@ const RecommendedSlider = ({ sliderItem }) => {
       <hr />
       <div className="SliderCardFooter">
         <p className="brand_color">
-          <i class="far fa-heart me-2"></i> {sliderItem?.reactLove}
+          <i className="far fa-heart me-2"></i> {sliderItem?.reactLove}
         </p>
         <p>
           12<span> tk</span> <span className="second_title">Delivery fee</span>

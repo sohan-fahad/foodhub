@@ -1,8 +1,10 @@
 import React from "react";
 import "./FoodHubBusiness.css";
 import FoodHubBusinessImg from "../../../images/Corporate_Info.jpg";
+import { useNavigate } from "react-router";
 
 const FoodHubBusiness = () => {
+  const navigate = useNavigate()
   return (
     <div className="FoodHubBusiness_Info">
       <div className="container">
@@ -19,7 +21,7 @@ const FoodHubBusiness = () => {
               and deliver them to hungry pandas in a heartbeat! Interested?
               Let's start our partnership today!
             </p>
-            <button className="FoodHubBusiness_Info_btn">GET STARTED</button>
+            <button className="FoodHubBusiness_Info_btn" onClick={() => navigate("/corporate")}>GET STARTED</button>
           </div>
         </div>
       </div>

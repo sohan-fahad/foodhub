@@ -1,23 +1,37 @@
 .top_menu {
-  height: 60px;
+  height: auto;
   background-color: var(--primary);
   display: flex;
   align-items: center;
+  padding: 15px;
+  /* position: relative; */
+}
+.top_menu i {
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
 }
 .top_menu_container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+}
+.top_menu_container h1  {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 0;
+  font-weight: 700;
 }
 
 .top_menu_container button {
   background-color: var(--primary);
-  border: none;
+  border: 1px solid  #fff;
+  padding: 15px 30px;
   color: #ffff;
   font-size: 16px;
-}
-.top_menu_container button:last-child {
-  border-left: 1px solid #ffff;
+  font-weight: 500;
 }
 @media screen and (max-width: 600px) {
   .top_menu {

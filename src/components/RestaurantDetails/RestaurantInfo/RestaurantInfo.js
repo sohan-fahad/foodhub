@@ -21,7 +21,7 @@ const RestaurantInfo = () => {
             <div className="RestaurantInfo_review">
               <p>25% OFF+BUY 1 GET 1</p>
               <p>
-                <i class="fas fa-star"></i> <span>4.1/5 (4k+)</span>
+                <i className="fas fa-star"></i> <span>4.1/5 (4k+)</span>
               </p>
             </div>
             <p className="mt-3" style={{ fontSize: "16px" }}>
@@ -30,7 +30,7 @@ const RestaurantInfo = () => {
           </div>
           <div>
             <i
-              class="fas fa-info-circle"
+              className="fas fa-info-circle"
               onClick={handleShow}
               style={{ cursor: "pointer" }}
             ></i>
@@ -49,7 +49,7 @@ const RestaurantInfo = () => {
               color: "#4cb32b",
               fontSize: "25px",
             }}
-            class="fas fa-times"
+            className="fas fa-times"
           ></i>
           <img
             src={fizza}
@@ -73,7 +73,7 @@ const RestaurantInfo = () => {
               >
                 Al Kaderia Restaurant - Rampura Bazar
                 <span style={{ fontSize: "16px" }}>
-                  <i class="fas fa-star" style={{ color: "yellow" }}></i>
+                  <i className="fas fa-star" style={{ color: "yellow" }}></i>
                   <span>4.1/5 </span>
                   <span style={{ fontSize: "16px" }}>(7113)</span>
                 </span>

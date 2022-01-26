@@ -1,0 +1,27 @@
+.LocationUpdateModal_wrapper {
+  position: relative;
+  padding: 30px;
+}
+
+.LocationUpdateModal_wrapper i {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.LocationUpdateModal_wrapper h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--title);
+  margin-bottom: 40px;
+}
+.LocationUpdateModal_wrapper input {
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  border: 0.1px solid var(--secondary);
+}

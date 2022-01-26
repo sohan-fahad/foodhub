@@ -55,17 +55,20 @@
   color: #fff;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .HelpCenter {
-    padding: 0;
-    position: relative;
-    top: 100px;
+    padding-bottom: 0;
   }
 }
+@media screen and (max-width: 768px) {
+  .HelpCenter {
+    padding-bottom: 100px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .HelpCenter {
     padding: 50px 0;
-    position: static;
   }
   .HelpCenter .help_btn .get_help_btn {
     padding: 15px 30px;

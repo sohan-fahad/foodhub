@@ -26,9 +26,8 @@
 }
 @media screen and (max-width: 768px) {
   .VoucherList {
-    padding: 0 30px;
-    position: relative;
-    top: 100px;
+    position: static;
+    padding-bottom: 100px;
   }
 }
 

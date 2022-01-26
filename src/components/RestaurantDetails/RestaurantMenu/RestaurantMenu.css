@@ -1,0 +1,125 @@
+.RestaurantMenu {
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.RestaurantMenu_search_wrapper {
+  padding: 15px 30px;
+  box-shadow: 1px 1px 10px rgb(228, 228, 228);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+}
+.RestaurantMenu_search_wrapper i {
+  font-size: 25px;
+  color: var(--primary);
+}
+
+.RestaurantMenu_search_wrapper input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  width: 100%;
+}
+.RestaurantMenu_search_wrapper1 {
+  padding: 15px 30px;
+  box-shadow: 1px 1px 5px rgb(204, 204, 204);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+  border-radius: 0 30% 30% 0;
+  display: none;
+}
+.RestaurantMenu_search_wrapper1 i {
+  font-size: 25px;
+  color: var(--primary);
+  cursor: pointer;
+}
+.RestaurantMenu_list_wrapper {
+  width: 70%;
+}
+.RestaurantMenu_list {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.RestaurantMenu_list .slick-prev:before,
+.RestaurantMenu_list .slick-next:before {
+  font-size: 35px !important;
+  opacity: 0.75 !important;
+  color: var(--primary) !important;
+}
+
+.RestaurantMenu_list a {
+  color: var(--secondary);
+}
+.RestaurantMenu_list a:hover {
+  color: var(--primary);
+}
+
+.activeMenuItem {
+  border-bottom: 1px solid var(--primary);
+  color: var(--title);
+}
+
+.RestaurantMenu_list .slick-prev:before,
+.RestaurantMenu_list .slick-next:before {
+  font-family: "slick";
+  font-size: 25px !important;
+  /* line-height: 1; */
+  opacity: 0.75;
+  color: var(--primary) !important;
+}
+
+.RestaurantMenu_list .slick-dots {
+  display: none;
+}
+.modal-fullscreen .modal-content {
+  height: auto !important;
+  border: 0;
+  border-radius: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .RestaurantMenu_search_wrapper1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+  }
+  .RestaurantMenu_search_wrapper1 i {
+    font-size: 16px;
+    padding-left: 10px;
+  }
+  .RestaurantMenu_search_wrapper {
+    display: none;
+  }
+  .RestaurantMenu_list {
+    /* overflow-x: scroll; */
+    width: 100%;
+  }
+  .RestaurantMenu_list_wrapper {
+    width: 80%;
+    /* overflow-x: scroll; */
+  }
+  .RestaurantMenu_list .slick-prev:before,
+  .RestaurantMenu_list .slick-next:before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .RestaurantMenu_search_wrapper1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+  }
+  .RestaurantMenu .container {
+    padding: 0;
+  }
+}

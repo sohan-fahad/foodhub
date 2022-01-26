@@ -26,6 +26,9 @@ input::-webkit-inner-spin-button {
 .brand_color {
   color: var(--primary) !important;
 }
+.first_title {
+  color: var(--title);
+}
 
 .second_title {
   font-size: 16px;

@@ -21,7 +21,7 @@ const CuisinesSlider = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -30,6 +30,7 @@ const CuisinesSlider = () => {
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
+          dots: true,
         },
       },
       {
@@ -37,6 +38,7 @@ const CuisinesSlider = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
         },
       },
     ],

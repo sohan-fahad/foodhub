@@ -6,8 +6,8 @@ import useMethod from "../../../Hooks/useMethod";
 import { useForm } from "react-hook-form";
 import useApi from "../../../Hooks/useApi";
 import { useNavigate } from "react-router";
-import useAuthentication from "../../../Hooks/useAuthentication";
 import { Spinner } from "react-bootstrap";
+import Cookies from "js-cookie";
 
 const Registration = () => {
   const { showPassword } = useMethod();
@@ -15,7 +15,6 @@ const Registration = () => {
   const [erorr, setError] = useState();
   const { foodHubAPI } = useApi();
   const navigate = useNavigate();
-  const { setUserInfo, setUser } = useAuthentication();
   const [isLoading, setIsLoading] = useState(true);
 
   const onSubmit = (data) => {
@@ -43,14 +42,13 @@ const Registration = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.status === "success") {
             console.log(data);
             localStorage.setItem("user", JSON.stringify(data.payload));
-            setUserInfo(user_info);
-            setUser(true);
+            Cookies.set("__act", data?.payload?.token);
+            Cookies.set("__rt", data?.payload?.refreshToken);
             localStorage.removeItem("email");
-            navigate("/user/name#profile");
+            navigate("/user/profile");
           } else {
             alert("there were some error. Please try again");
           }
@@ -121,7 +119,6 @@ const Registration = () => {
       {!isLoading && (
         <div
           className="d-flex justify-content-center align-items-center"
-          style={{ height: "100vh" }}
         >
           <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>

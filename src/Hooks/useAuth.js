@@ -15,6 +15,9 @@ const useAuth = () => {
     setEmail(user_email);
   };
 
+
+
+
   useEffect(() => {
     const userDetails = JSON.parse(localStorage.getItem("user"));
     if (userDetails) {

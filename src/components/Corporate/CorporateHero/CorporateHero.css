@@ -1,0 +1,59 @@
+.CorporateHero {
+    background: url(../../../images/corporateHero.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+.CorporateHero .CorporateHero_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 700px;
+}
+
+.CorporateHero .CorporateHero_wrapper h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #fff;
+}
+.CorporateHero .CorporateHero_wrapper p {
+    font-size: 16px;
+    color: #fff;
+    margin-top: 20px;
+}
+.CorporateHero .CorporateHero_wrapper button {
+    border: none;
+    background-color: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 15px 30px;
+    width: 30%;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .CorporateHero {
+        height: auto;
+        padding: 100px 0;
+    }
+    .CorporateHero .CorporateHero_wrapper {
+        text-align: center;
+        height: auto;
+    }
+    .CorporateHero .CorporateHero_wrapper button {
+        width: 100%;
+    }
+    .CorporateHero .CorporateHero_wrapper h1 {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .CorporateHero {
+        height: auto;
+        padding: 50px 0;
+    }
+}
