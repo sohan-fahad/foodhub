@@ -1,0 +1,27 @@
+.CorporateContactHero {
+    background-image: url(../../../images/cms-hero.webp);
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CorporateContactHero__title{
+    font-size: 36px;
+    line-height: 1.1em;
+    color: #fff;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 600px) {
+    .CorporateContactHero {
+        height: 200px;
+        padding: 0 15px;
+    }
+    .CorporateContactHero__title {
+        font-size: 24px;
+    }
+}

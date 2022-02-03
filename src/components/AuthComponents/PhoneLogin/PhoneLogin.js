@@ -1,24 +1,24 @@
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import BackBtn from "../../Share/BackBtn/BackBtn";
-import "./EmailLogin.css";
+import "./PhoneLogin.css";
 import emailImg from "../../../images/email .png";
 import { useForm } from "react-hook-form";
 import useApi from "../../../Hooks/useApi";
 import { useNavigate } from "react-router";
 import { Spinner } from "react-bootstrap";
 
-const EmailLogin = () => {
+const PhoneLogin = () => {
   const { register, handleSubmit, trigger, watch } = useForm();
   const { foodHubAPI } = useApi();
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(true);
-  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
 
-  const handleEmail = (e) => {
-    const user_email = e.target.value;
-    setEmail(user_email);
+
+  const handleNumber = (e) => {
+    const phoneNumber = e.target.value;
+    setNumber(phoneNumber);
   };
 
 
@@ -26,9 +26,8 @@ const EmailLogin = () => {
 
   const onSubmit = (data) => {
     setIsLoading(true);
-    console.log(data);
     setIsLoading(false);
-    fetch(`${foodHubAPI}/user/check-email-user`, {
+    fetch(`${foodHubAPI}/user/check-phone-user`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -37,14 +36,13 @@ const EmailLogin = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-
-        localStorage.setItem("email", email);
-        if (data.statusCode === 404) {
+        localStorage.setItem("number", number);
+        if (data.status === "success") {
           setIsLoading(false);
-          navigate("/auth/email/registration");
+          navigate("/auth/phone/password");
         } else {
           setIsLoading(false);
-          navigate("/auth/email/password");
+          navigate("/auth/phone/registration");
         }
       });
   };
@@ -55,16 +53,17 @@ const EmailLogin = () => {
         <div className="emailLogin_wrapper">
           <BackBtn></BackBtn>
           <img src={emailImg} alt="" className="email_login_img" />
-          <h3>What's your email?</h3>
+          <h3>What's your mobile number?</h3>
           <p>We'll check if you have an account.</p>
           <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
             <input
-              {...register("email")}
-              type="email"
+              {...register("phone")}
+              type="number"
               id=""
-              placeholder="Email"
+              placeholder="Mobile Number"
               required
-              onKeyDown={handleEmail}
+              onChange={handleNumber}
+              onKeyDown={handleNumber}
             />
             <input type="submit" value="CONTINUE" />
           </form>
@@ -81,4 +80,4 @@ const EmailLogin = () => {
   );
 };
 
-export default EmailLogin;
+export default PhoneLogin;

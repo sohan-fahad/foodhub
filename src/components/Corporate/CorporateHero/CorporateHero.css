@@ -22,16 +22,17 @@
     color: #fff;
     margin-top: 20px;
 }
-.CorporateHero .CorporateHero_wrapper button {
+.CorporateHero .CorporateHero_wrapper a {
     border: none;
     background-color: var(--primary);
-    color: #fff;
-    font-weight: 700;
-    font-size: 16px;
-    padding: 15px 30px;
-    width: 30%;
+    color: #fff !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    padding: 15px 30px !important;
+    width: 30% !important;
     border-radius: 5px;
     margin-top: 30px;
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -44,7 +45,7 @@
         height: auto;
     }
     .CorporateHero .CorporateHero_wrapper button {
-        width: 100%;
+        width: 100% !important;
     }
     .CorporateHero .CorporateHero_wrapper h1 {
         font-size: 36px;
@@ -55,5 +56,8 @@
     .CorporateHero {
         height: auto;
         padding: 50px 0;
+    }
+    .CorporateHero .CorporateHero_wrapper a {
+        width: 100% !important;
     }
 }

@@ -42,7 +42,7 @@
   margin-bottom: 30px;
 }
 
-.emailLogin_wrapper form button {
+.emailLogin_wrapper form input[type="submit"] {
   padding: 20px;
   border-radius: 5px;
   outline: none;
@@ -59,6 +59,7 @@
 .emailLogin_wrapper form input[type="submit"]:hover {
   background-color: var(--primary);
   color: #fff;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 991px) {

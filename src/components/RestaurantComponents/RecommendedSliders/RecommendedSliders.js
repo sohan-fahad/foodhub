@@ -5,46 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import OfferSliderCard from "../OfferSliderCard/OfferSliderCard";
 import "./RecommendedSliders.css";
-import RecommendedSlider from "../RecommendedSlider/RecommendedSlider";
 
 const RecommendedSliders = () => {
-  let settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    initialSlide: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-          dots: true,
-
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: true,
-
-        },
-      },
-    ],
-  };
 
   const offerSlider = [
     {
@@ -93,15 +55,44 @@ const RecommendedSliders = () => {
       tk: 12,
     },
   ];
+
+  const items = []
+
+  offerSlider.forEach(pd => {
+    items.push(<div className="RecommendedSlider">
+      <img src={pd?.slider} className="img-fluid w-100" />
+      <div className="title">
+        <h5>{pd?.name}</h5>
+        <h5>
+          <i className="fas fa-star me-2" style={{ color: "#fdc50e" }}></i>
+          {pd?.rating}/5 <span className="second_title">(12k)</span>
+        </h5>
+      </div>
+      <div>
+        <span className="fw-bold">৳</span>
+        <span className="fw-bold">৳</span>
+        <span className="fw-bold">৳</span>
+      </div>
+      <hr />
+      <div className="SliderCardFooter">
+        <p className="brand_color">
+          <i className="far fa-heart me-2"></i> {pd?.reactLove}
+        </p>
+        <p>
+          {pd?.tk}<span> tk</span> <span className="second_title">Delivery fee</span>
+        </p>
+      </div>
+      <div className="offer_details">
+        <p>15% OFF+BIRYANI150 </p>
+      </div>
+    </div>)
+  });
+
+
   return (
     <div className="RecommendedSliders">
       <div className="container">
-        <h3>Recommended for you</h3>
-        <Slider {...settings}>
-          {offerSlider.map((pd) => (
-            <RecommendedSlider key={pd?.id} sliderItem={pd}></RecommendedSlider>
-          ))}
-        </Slider>
+        <OfferSliderCard items={items} title={"Recommended Restaurant"} />
       </div>
     </div>
   );

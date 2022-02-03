@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import "./CartSection.css";
 
 const CartSection = () => {
   const navigate = useNavigate()
+
+  // useEffect(() => {
+  //   window.addEventListener('scroll', isSticky);
+  //   return () => {
+  //     window.removeEventListener('scroll', isSticky);
+  //   };
+  // });
+
+  // /* Method that will fix header after a specific scrollable */
+  // const isSticky = (e) => {
+  //   const header = document.querySelector('#cart-items');
+  //   const scrollTop = window.scrollY;
+  //   scrollTop >= 150 ? header.classList.add('is-sticky') : header.classList.remove('is-sticky');
+  // };
   return (
     <div className="CartSection mt-5">
-      <div className="container">
+      <div className="cart_items">
         <p className="text-center fw-bold m-0">Your Cart</p>
         <p className="text-center second_color">
           Start adding items to your cart

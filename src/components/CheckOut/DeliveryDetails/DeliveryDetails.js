@@ -31,7 +31,7 @@ const DeliveryDetails = () => {
             </p>
           </div>
           <div className="p-3">
-            <label class="DeliveryDetails_switch">
+            <label className="DeliveryDetails_switch">
               <input type="checkbox" /> <div></div>
             </label>
           </div>
@@ -72,7 +72,7 @@ const DeliveryDetails = () => {
                 name="custom-radio-btn"
               />
               <label htmlFor="home">
-                <i class="fas fa-home"></i>
+                <i className="fas fa-home"></i>
               </label>
 
               <p htmlFor="home">Home</p>
@@ -85,7 +85,7 @@ const DeliveryDetails = () => {
                 name="custom-radio-btn"
               />
               <label htmlFor="office">
-                <i class="fas fa-briefcase"></i>
+                <i className="fas fa-briefcase"></i>
               </label>
 
               <p>Office</p>
@@ -98,7 +98,7 @@ const DeliveryDetails = () => {
                 name="custom-radio-btn"
               />
               <label htmlFor="partner">
-                <i class="far fa-heart"></i>
+                <i className="far fa-heart"></i>
               </label>
 
               <p>Partner</p>
@@ -111,7 +111,7 @@ const DeliveryDetails = () => {
                 name="custom-radio-btn"
               />
               <label htmlFor="others">
-                <i class="fas fa-plus"></i>
+                <i className="fas fa-plus"></i>
               </label>
 
               <p>Others</p>

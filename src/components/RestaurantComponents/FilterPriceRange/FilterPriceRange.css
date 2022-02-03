@@ -1,0 +1,16 @@
+.FilterPriceRange .priceRange label {
+  width: 100%;
+  border: 1px solid var(--primary);
+  text-align: center;
+  padding: 10px 0;
+  color: var(--primary);
+}
+
+.FilterPriceRange .priceRange input:checked +  label {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.FilterPriceRange .priceRange input {
+  display: none;
+}

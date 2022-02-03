@@ -24,8 +24,8 @@ const Login = () => {
           <WithLogin icon={facebook_icon} btnName="Facebook"></WithLogin>
         </div>
         <h5 className="text-center p-0 my-3">OR</h5>
-        <Nav.Link as={Link} to="/auth/email" className="email_login_btn">
-          CONTINUE WITH EMAIL
+        <Nav.Link as={Link} to="/auth/phone" className="email_login_btn">
+          CONTINUE WITH MOBILE NUMBER
         </Nav.Link>
         <p className="login_term_condition">
           By signing up, you agree to our <span>Terms and Conditions</span> and

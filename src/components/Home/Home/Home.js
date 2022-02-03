@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import useApi from "../../../Hooks/useApi";
 import Blogs from "../Blogs/Blogs";
 import DownloadApp from "../DownloadApp/DownloadApp";
 import FoodHubBusiness from "../FoodHubBusiness/FoodHubBusiness";
@@ -8,14 +9,15 @@ import ServiceCities from "../ServiceCities/ServiceCities";
 import WorkProcess from "../WorkProcess/WorkProcess";
 
 const Home = () => {
+
   return (
     <div>
       <HeroBox></HeroBox>
       <WorkProcess></WorkProcess>
       <RestaurantInfo></RestaurantInfo>
-      <ServiceCities></ServiceCities>
+      {/* <ServiceCities></ServiceCities> */}
       <DownloadApp></DownloadApp>
-      <Blogs></Blogs>
+      {/* <Blogs></Blogs> */}
       <FoodHubBusiness></FoodHubBusiness>
     </div>
   );

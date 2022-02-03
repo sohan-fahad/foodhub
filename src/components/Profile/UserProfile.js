@@ -1,47 +1,93 @@
-import React from "react";
+import React, { useState } from "react";
 import "./UserProfile.css";
 import bkashImg from "../../images/bKashIcon.png";
 import useMethod from "../../Hooks/useMethod";
 import { useSelector } from "react-redux";
+import useApi from "../../Hooks/useApi";
+import { useForm } from "react-hook-form";
 
 const UserProfile = () => {
   const { showPassword } = useMethod();
+  const { foodHubAPI } = useApi()
+  const { register, handleSubmit, watch, reset } = useForm();
 
-  const { email, firstName, lastName, phone } = useSelector(
-    (state) => state.authCheckReducer
-  );
+  const userDetails = JSON.parse(localStorage.getItem("user"))
+
+
+
+  const { user } = useSelector((state) => state.authCheckReducer)
+
+  let userData = { email: user?.email, firstName: user?.firstName, lastName: user?.lastName, phone: user?.phone }
+
+  const handleEmail = (e) => {
+    const updateEmail = { email: e.target.value }
+    userData = { ...userData, ...updateEmail }
+  }
+
+  const handleFirstName = (e) => {
+    const updateFirstName = { firstName: e.target.value }
+    userData = { ...userData, ...updateFirstName }
+  }
+  const handleLastName = (e) => {
+    const updateLastName = { lastName: e.target.value }
+    userData = { ...userData, ...updateLastName }
+  }
+  const handlePhone = (e) => {
+    const updatePhone = { phone: e.target.value }
+    userData = { ...userData, ...updatePhone }
+  }
+
+  const handleUpdateUserInfo = (e) => {
+    e.preventDefault()
+    if (userDetails) {
+      fetch(`${foodHubAPI}/user/update-user-profile?id=${user?.id}`, {
+        method: "PUT",
+        headers: {
+          "x-access-token": `${userDetails?.accessToken}`,
+          "content-type": "application/json"
+        },
+        body: JSON.stringify(userData),
+      })
+        .then(res => res.json())
+        .then(data => console.log(data))
+    }
+  }
+
+
   return (
     <div className="UserProfile" id="profile">
       <div className="user_profile_wrapper">
         <div className="user_profile_info">
           <h3>MY PROFILE</h3>
-          <form>
+          <form onSubmit={handleUpdateUserInfo} >
             <input
               type="email"
-              name="email"
               placeholder="Email"
-              defaultValue={email}
+              onChange={handleEmail}
+              defaultValue={user?.email}
             />
             <input
               type="text"
-              name="fname"
               placeholder="First Name"
-              defaultValue={firstName}
+              onChange={handleFirstName}
+              defaultValue={user?.firstName}
             />
             <input
               type="text"
-              name="lname"
               placeholder="Last Name"
-              defaultValue={lastName}
+              onChange={handleLastName}
+              defaultValue={user?.lastName}
             />
             <input
               type="number"
-              name="mobile"
               placeholder="Mobile Number"
-              defaultValue={phone}
+              onChange={handlePhone}
+              defaultValue={user?.phone}
             />
             <input type="submit" value="SAVE" />
           </form>
+
+
         </div>
         <div className="user_profile_info user_profile_password">
           <h3>PASSWORD</h3>

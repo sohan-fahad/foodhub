@@ -1,15 +1,18 @@
-.CorporateHeader button {
+.CorporateHeader {
+    display: flex;
+}
+.CorporateHeader a {
     border: none;
     background-color: var(--primary);
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 16px;
+    color: #fff !important;
+    padding: 15px 30px !important;
+    font-size: 16px !important;
     border-radius: 5px;
     font-weight: 700;
 }
 
 @media screen and (max-width: 600px) {
-    .CorporateHeader button:first-child {
+    .CorporateHeader a:first-child {
         display: none;
     }
     

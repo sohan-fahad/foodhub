@@ -1,0 +1,42 @@
+.challenge_Card {
+    background-image: url(../../../images/challenge-item-bg.webp);
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position-y: -16px;
+    background-size: 100%;
+    padding: 20px 15px;
+    box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.192);
+    cursor: pointer;
+}
+.challenge_Card img {
+    width: 120px;
+    position: relative;
+    top: -54px;
+    margin: 0 auto;
+    display: block;
+}
+
+.challenge_Card h5 {
+    font-size: 16px;
+    font-weight: 600;
+}
+.challenge_Card hr {
+    height: 4px;
+    background-color: var(--secondary);
+}
+.challenge_Card i {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+    .challenge_Card {
+        background-position-y: -80px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .challenge_Card {
+        background-position-y: -10px;
+    }
+}

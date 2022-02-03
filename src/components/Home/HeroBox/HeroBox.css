@@ -24,7 +24,7 @@
 }
 
 .location_container {
-  width: 80%;
+  width: 90%;
   height: 100px;
   background-color: #fff;
   padding: 10px;
@@ -35,7 +35,7 @@
   margin-top: 60px;
 }
 .get_location {
-  width: 70%;
+  width: 60%;
   height: 70px;
   border: 1px solid rgb(34, 34, 34);
   display: flex;
@@ -58,7 +58,7 @@
   align-items: center;
 }
 .get_restaurant {
-  width: 29%;
+  width: 39%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -72,6 +72,10 @@
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 1px;
+  
+}
+.get_restaurant_btn:first-child {
+  margin-left: 16px;
 }
 
 @media screen and (max-width: 991px) {
@@ -124,6 +128,9 @@
     color: #fff;
     height: 50px;
     margin-top: 10px;
+  }
+  .get_restaurant_btn:first-child {
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 600px) {

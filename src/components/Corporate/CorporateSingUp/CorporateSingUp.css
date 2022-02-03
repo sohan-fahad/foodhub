@@ -1,0 +1,122 @@
+.CorporateSingUp {
+    padding-bottom: 100px;
+    position: relative ;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.CorporateSingUp_overlay {
+    height: 50%;
+    width: 100%;
+    background-color: #effdec;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.CorporateSingUp h1 {
+    font-style: 36px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary);
+    padding: 100px 50px 30px;
+}
+.CorporateSingUp p {
+    color: var(--secondary);
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.CorporateSingUp_form_wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 0;  
+    box-shadow: 1px 1px 10px rgb(221, 221, 221);
+    background-color: #fff;
+    border-radius: 20px;
+}
+.CorporateSingUp_form_wrapper form {
+    width: 50%;
+    margin: 0 auto;
+}
+.CorporateSingUp_form_wrapper form h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--title);
+    margin-bottom: 30px;
+}
+.CorporateSingUp_form_wrapper form input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    border: 1px solid var(--secondary);
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.CorporateSingUp_form_wrapper form select {
+    border-radius: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: var(--secondary);
+    height: 56px
+}
+
+.CorporateSingUp_form_wrapper form button {
+    width: 100%;
+    border: none;
+    background-color: var(--primary);
+    padding: 15px 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.CorporateSingUp_contact {
+    border-radius: 20px;
+    background-color: #effdec;
+    padding: 50px;
+    margin-top: 30px;
+}
+.CorporateSingUp_contact h4  {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--title);
+}
+.CorporateSingUp_contact p {
+    text-align: left;
+    color: var(--secondary);
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 991px) {
+    .CorporateSingUp {
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .CorporateSingUp {
+        padding-bottom: 100px;
+    }
+    .CorporateSingUp_form_wrapper form {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+    .CorporateSingUp {
+        padding-bottom: 50px;
+    }
+    .CorporateSingUp_contact {
+        padding: 20px;
+        overflow: hidden;
+    }
+    .CorporateSingUp_contact h4 {
+        font-size: 18px;
+    }
+    
+}

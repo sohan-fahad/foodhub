@@ -1,9 +1,12 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { delivery, pickUp } from "../../../store/action/deliverState";
 import "./HeroBox.css";
 
 const HeroBox = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const getUserLocation = () => {
     if (navigator.geolocation) {
@@ -17,6 +20,16 @@ const HeroBox = () => {
       position.coords.latitude +
       "<br>Longitude: " +
       position.coords.longitude;
+  }
+
+  const handlePickup = () => {
+    dispatch(pickUp())
+    navigate("/restaurant/new")
+  }
+
+  const handleDelivery = () => {
+    dispatch(delivery())
+    navigate("/restaurant/new")
   }
 
   return (
@@ -49,10 +62,16 @@ const HeroBox = () => {
             </div>
             <div className="get_restaurant">
               <button
-                className="get_restaurant_btn"
-                onClick={() => navigate("/restaurant/new")}
+                className="get_restaurant_btn me-3"
+                onClick={handleDelivery}
               >
-                FIND RESTAURANT
+                DELIVERY
+              </button>
+              <button
+                className="get_restaurant_btn"
+                onClick={handlePickup}
+              >
+                PICK-UP
               </button>
             </div>
           </div>

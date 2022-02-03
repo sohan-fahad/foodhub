@@ -1,14 +1,12 @@
 import authCheckReducer from "./authCheckReducer";
-import logOutReducer from "./logOutReducer";
-import loginReducer from "./loginReducer";
 import closeHeaderReducer from "./closeHeaderReducer"
+import deliverReducers from "./deliverReducers"
 import { combineReducers } from "redux";
 
 const allReducers = combineReducers({
+  closeHeaderReducer,
   authCheckReducer,
-  logOutReducer,
-  loginReducer,
-  closeHeaderReducer
+  deliverReducers
 });
 
 export default allReducers;

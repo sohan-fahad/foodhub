@@ -1,0 +1,109 @@
+.ChallengeDetails {
+    background-image: url(../../../images//challenges-background.webp);
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    padding: 100px 0;
+    background-size: 300px auto;
+}
+.ChallengeDetails_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px rgba(182, 182, 182, 0.493);
+}
+.ChallengeDetails_header_bg {
+    background-image: url("../../../images//challenge-detail-header-bg.webp");
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    box-shadow: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ChallengeDetails_header_bg img {
+    width: 100px;
+}
+
+.ChallengeDetails_header_content {
+    padding: 30px 20px;
+    width: 100%;
+}
+.ChallengeDetails_header_content h1 {
+    font-size: 24px;
+    color: var(--title);
+    font-weight: 700;
+    text-align: center;
+}
+.ChallengeDetails_header_content p {
+    font-size: 16px;
+    color: var(--secondary);
+    margin-top: 20px;
+    padding-bottom: 0;
+}
+.ChallengeDetails_header_content p:first-child{
+    border-right: 1px solid var(--secondary);
+    padding-right: 15px;
+}
+
+.ChallengeDetails_header_content p i{
+    font-size: 20px;
+}
+.ChallengeDetails_header_content hr {
+    height: 3px;
+    background-color: var(--secondary);
+}
+.ChallengeDetails_header_content h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--title);
+    margin-top: 30px;
+}
+.ChallengeDetails_terms {
+    margin-top: 30px;
+    width: 100%;
+    box-shadow: 1px 1px 10px rgba(182, 182, 182, 0.493);
+}
+.ChallengeDetails_terms_wrapper {
+    padding: 20px 20px;
+}
+.ChallengeDetails_terms h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--title);
+}
+.ChallengeDetails_terms_conditions {
+    margin-top: 30px;
+    padding: 20px 0;
+}
+.ChallengeDetails_terms_conditions button {
+    border: none;
+    background-color: #fff;
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 700;
+}
+.ChallengeDetails_terms_btn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px;
+    box-shadow: 0 2px 28px 0 rgba(0,0,0,.12);
+    padding: 15px;
+}
+.ChallengeDetails_terms_btn button {
+    width: 100%;
+    padding: 20px 0;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #fff;
+}
+
+.ChallengeDetails_terms ul li {
+    color: var(--secondary);
+    font-size: 16px;
+}

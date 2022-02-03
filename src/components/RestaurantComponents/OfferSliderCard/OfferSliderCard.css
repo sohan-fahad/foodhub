@@ -1,3 +1,56 @@
 .OfferSliderCard {
   padding: 10px;
 }
+
+.OfferSliderCard h3 {
+  font-weight: 400 !important;
+  color: var(--title) !important;
+  margin-bottom: 15px !important;
+  font-size: 36px;
+}
+
+
+.OfferSliderCard .alice-carousel__dots {
+  display: none !important;
+}
+
+.OfferSliderCard .alice-carousel__prev-btn, .alice-carousel__next-btn {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 0% !important;
+  padding: 10px 5px;
+}
+.OfferSliderCard .alice-carousel {
+  position: relative;
+}
+.OfferSliderCard .alice-carousel__next-btn {
+  position: absolute;
+  right: -5px;
+  font-size: 30px;
+  top: 20px;
+}
+.OfferSliderCard .alice-carousel__next-btn-item, .alice-carousel__prev-btn-item {
+  background-color: var(--primary);
+  padding: 0 10px !important;
+  color: #fff !important;
+}
+
+.OfferSliderCard .alice-carousel__prev-btn {
+  position: absolute;
+  left: -40px;
+  font-size: 30px;
+  top: 20px;
+}
+
+.OfferSliderCard .alice-carousel__prev-btn-item.__inactive, .alice-carousel__next-btn-item.__inactive {
+  display: none !important;
+}
+
+@media screen and (max-width: 600px) {
+ .OfferSliderCard .alice-carousel__next-btn-item, .alice-carousel__prev-btn-item  {
+    display: none !important
+  }
+  .OfferSliderCard h3 {
+    font-size: 24px;
+  }
+}

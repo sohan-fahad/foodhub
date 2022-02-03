@@ -1,9 +1,6 @@
-/* .CartSection {
-  width: 100%;
-  height: 100%;
-  padding: 100px 0;
-  box-shadow: 1px 1px 20px rgb(212, 212, 212);
-} */
+.CartSection {
+  height: 100vh;
+}
 
 .CartSection .cart_items_wrapper {
   max-height: 350px;
@@ -19,6 +16,18 @@
   font-weight: 700;
   padding: 10px 15px;
   color: #fff;
+}
+.is-sticky {
+    z-index: 999;
+    width: 24.3%;
+    background-color: #ffffff !important;
+    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+    padding: 10px 15px;
+}
+
+.cart_items {
+  padding: 10px 30px;
+  background-color: #fff;
 }
 
 @media screen and (max-width: 991px) {

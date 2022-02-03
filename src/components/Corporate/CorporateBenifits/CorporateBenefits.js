@@ -1,4 +1,6 @@
 import React from 'react';
+import { Nav } from 'react-bootstrap';
+import { HashLink } from 'react-router-hash-link';
 import benefits from "../../../images/CorporateBenefits.jpg"
 import "./CorporateBenefits.css"
 
@@ -14,32 +16,14 @@ const CorporateBenefits = () => {
                                 dishes</h3>
                             <p>Create a better workplace, powered by food. Here are just some of the perks of Food Hub for business.</p>
                             <ul>
-                                <li>
-                                    <div className='CorporateBenefits_list'>
-                                        <div className='me-3'></div>
-                                        <p className='m-0'>Improve employee satisfaction and retention</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className='CorporateBenefits_list'>
-                                        <div className='me-3'></div>
-                                        <p className='m-0'>Encourage cohesion and cooperation</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className='CorporateBenefits_list'>
-                                        <div className='me-3'></div>
-                                        <p className='m-0'>Increase team productivity and morale</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className='CorporateBenefits_list'>
-                                        <div className='me-3'></div>
-                                        <p className='m-0'>Access to exclusive corporate menus and discounts</p>
-                                    </div>
-                                </li>
+                                <li>Improve employee satisfaction and retention</li>
+                                <li>Encourage cohesion and cooperation</li>
+                                <li>Increase team productivity and morale</li>
+                                <li>Access to exclusive corporate menus and discounts</li>
                             </ul>
-                            <button>FIND OUT MORE</button>
+                            <Nav.Link as={HashLink} to="/corporate#CorporateSingUp">
+                                FIND OUT MORE
+                            </Nav.Link>
                         </div>
                     </div>
                     <div className="col-lg-6 col-12">

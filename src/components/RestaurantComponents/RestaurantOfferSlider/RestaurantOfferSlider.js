@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
 // Import css files
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'react-alice-carousel/lib/alice-carousel.css';
 import OfferSliderCard from "../OfferSliderCard/OfferSliderCard";
 import "./RestaurantOfferSlider.css";
 import useApi from "../../../Hooks/useApi";
@@ -32,71 +30,18 @@ const RestaurantOfferSlider = () => {
       slider: "https://i.ibb.co/PWBfmYV/offer-Slider.jpg",
     },
   ];
-  let settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    initialSlide: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: true,
-        },
-      },
-    ],
-  };
 
-  const [restaurant, setRestaurant] = useState([]);
-  const { foodHubAPI } = useApi();
 
-  const token = Cookies.get("__act");
-  const refreshToken = Cookies.get("__rt");
+  const items = []
 
-  useEffect(() => {
-    if (token) {
-      axios.get(`${foodHubAPI}/admin/restaurants`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        },
-      })
-        .then((res) => console.log(res));
-    }
-  }, []);
+  offerSlider.forEach(pd => {
+    items.push(<img src={pd?.slider} alt="" className="img-fluid w-100 px-2" />)
+  });
 
   return (
     <div className="RestaurantOfferSlider">
       <div className="container">
-        <Slider {...settings}>
-          {offerSlider.map((pd) => (
-            <OfferSliderCard
-              key={pd?.id}
-              sliderImg={pd?.slider}
-            ></OfferSliderCard>
-          ))}
-        </Slider>
+        <OfferSliderCard items={items} />
       </div>
     </div>
   );

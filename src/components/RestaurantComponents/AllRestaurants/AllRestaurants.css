@@ -1,0 +1,11 @@
+.AllRestaurants {
+    height: auto;
+    padding-bottom: 50px;
+}
+
+.AllRestaurants h3 {
+    font-weight: 400 ;
+    color: var(--title) ;
+    margin-bottom: 15px;
+    font-size: 36px;
+}

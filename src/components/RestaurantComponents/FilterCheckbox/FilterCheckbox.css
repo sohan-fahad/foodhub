@@ -1,0 +1,31 @@
+.FilterCheckbox {
+    width: 100%;
+}
+.FilterCheckbox .checkbox-button {
+  display: inline-flex;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    border: 1px solid var(--secondary);
+    margin: 0 16px 0 0;
+    text-align: left;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.FilterCheckbox .checkbox-button i {
+    font-size: 23px;
+    color: var(--primary);
+    display: none;
+}
+.FilterCheckbox input {
+    display: none;
+}
+.FilterCheckbox input:checked + .checkbox-button {
+    border: none;
+}
+.FilterCheckbox input:checked + .checkbox-button i {
+    display: block;
+}

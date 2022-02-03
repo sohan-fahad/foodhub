@@ -76,6 +76,7 @@
 }
 .Header .dropdown-menu {
   inset: 0 auto auto -40px !important;
+  padding: 0 !important;
 }
 @media screen and (max-width: 768px) {
   .header_container .deliverPlace_container1 {
@@ -90,13 +91,13 @@
   .deliverPlace_container2 .DeliverPlace .user_location1 {
     background-color: #fff !important;
     border: none;
-    padding: 0 15px;
+    padding-bottom: 20px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .Header {
-    padding: 15px 0;
+  .header_container {
+    padding: 10px 0;
   }
   .Header h3 {
     margin-bottom: 0;

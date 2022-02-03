@@ -32,7 +32,7 @@ const ResponsiveCart = () => {
     <div className="ResponsiveCart">
       <div className="container">
         <div className="d-flex justify-content-between">
-          <i class="fas fa-shopping-bag">
+          <i className="fas fa-shopping-bag">
             <span className="ms-1">0</span>
           </i>
           <button onClick={handleShow}>VIEW CART</button>
@@ -46,7 +46,7 @@ const ResponsiveCart = () => {
         fullscreen={fullscreen}
       >
         <div className="responsive_cart_modal p-4">
-          <i class="fas fa-times" onClick={handleClose}></i>
+          <i className="fas fa-times" onClick={handleClose}></i>
 
           <div className="responsive_cart_item_wrapper mb-4">
             <div>

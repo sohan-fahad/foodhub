@@ -13,7 +13,7 @@ const LocationUpdateModal = ({ show, handleClose }) => {
         size="lg"
       >
         <div className="LocationUpdateModal_wrapper">
-          <i class="fas fa-times" onClick={handleClose}></i>
+          <i className="fas fa-times" onClick={handleClose}></i>
           <h3>Is this your exact location?</h3>
           <input type="text" placeholder="Enter location" />
         </div>

@@ -10,11 +10,16 @@ const TopMenu = () => {
 
   const handlePopUpNavigate = () => {
     dispatch(closeHeaderPopup())
+    localStorage.setItem("headerPopup", true)
     navigate("/corporate")
+  }
+  const handleHeaderPopup = () => {
+    dispatch(closeHeaderPopup())
+    localStorage.setItem("headerPopup", true)
   }
   return (
     <div className="top_menu">
-      <i onClick={() => dispatch(closeHeaderPopup())} class="fas fa-times"></i>
+      <i onClick={handleHeaderPopup} className="fas fa-times"></i>
       <div className="container">
         <div className="top_menu_container">
           <h1 className="me-5">Do you need a business account?</h1>

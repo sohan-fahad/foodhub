@@ -1,0 +1,13 @@
+.ResponsiveFilter {
+    background-color: #fff;
+    height: auto;
+    padding: 30px;
+}
+.ResponsiveFilter_wrapper{
+    position: relative;
+}
+.ResponsiveFilter i {
+    position: absolute;
+    left: 20px;
+    top: 20px
+}

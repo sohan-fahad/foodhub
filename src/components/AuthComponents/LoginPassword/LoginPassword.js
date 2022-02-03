@@ -8,19 +8,22 @@ import useMethod from "../../../Hooks/useMethod";
 import useApi from "../../../Hooks/useApi";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import login from "../../../store/action/login";
 import checkAuth from "../../../store/action/checkAuth";
-import Cookies from "js-cookie";
+import useAuthentication from "../../../Hooks/useAuthentication"
+
+
+
 
 const LoginPassword = () => {
-  const email = localStorage.getItem("email");
+  const number = localStorage.getItem("number");
   const [password, setPassword] = useState("");
   const { showPassword } = useMethod();
   const { foodHubAPI } = useApi();
+  const { handleExpirerTIme } = useAuthentication()
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
 
-  const { register, handleSubmit, watch, reset } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const dispatch = useDispatch();
 
@@ -32,7 +35,7 @@ const LoginPassword = () => {
   const onSubmit = (data) => {
     setIsLoading(true);
     const userInfo = {
-      email,
+      phone: number,
       ...data,
     };
     setIsLoading(false);
@@ -45,11 +48,12 @@ const LoginPassword = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.status === "success") {
-          Cookies.set("__act", data?.payload?.token);
-          Cookies.set("__rt", data?.payload?.refreshToken);
+        console.log(data.user);
+        if (data.accessToken) {
           localStorage.setItem("user", JSON.stringify(data));
-          dispatch(checkAuth(data.payload));
+          localStorage.removeItem("number")
+          handleExpirerTIme()
+          dispatch(checkAuth(data.user));
           navigate("/user/profile");
           reset();
         } else {
@@ -65,7 +69,7 @@ const LoginPassword = () => {
           <img src={loginImg} alt="" className="login_password_img" />
           <h3>Welcome Back!</h3>
           <p>Enter Your Password.</p>
-          <h5>{email}</h5>
+          <h5>{number}</h5>
           <Nav.Link as={Link} to="#">
             Forget Your Password?
           </Nav.Link>

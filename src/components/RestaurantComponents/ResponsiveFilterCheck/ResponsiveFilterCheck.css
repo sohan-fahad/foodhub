@@ -1,0 +1,28 @@
+.ResponsiveFilterCheck .checkbox-button {
+  display: inline-flex;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    border: 1px solid var(--secondary);
+    margin: 0 16px 0 0;
+    text-align: left;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ResponsiveFilterCheck .checkbox-button i {
+    font-size: 23px;
+    color: var(--primary);
+    display: none;
+}
+.ResponsiveFilterCheck input {
+    display: none;
+}
+.ResponsiveFilterCheck input:checked + .checkbox-button {
+    border: none;
+}
+.ResponsiveFilterCheck input:checked + .checkbox-button i {
+    display: block;
+}

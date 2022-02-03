@@ -8,6 +8,7 @@
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .SearchFilter .filter_container .searchIcon_container {
   width: 10%;
@@ -32,7 +33,50 @@
 .SearchFilter .filter_container .filterIcon_container {
   width: 30%;
   display: flex;
-  justify-content: center;
+  padding: 0 30px;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
+}
+
+.FilterModal_bg {
+  width: 100%;
+  height: 100vw;
+  position: fixed;
+  background-color: rgba(131, 131, 131, 0.431);
+  overflow: hidden;
+  top: 0;
+  z-index: 1;
+}
+.ResponsiveFilter_wrapper {
+  margin-top: 100px;
+  padding: 0 30px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.ResponsiveFilter_wrapper h3 {
+  font-size: 24px;
+  color: var(--title);
+  margin-bottom: 30px;
+}
+.ResponsiveFilter_span {
+  overflow-x: hidden;
+  display: flex;
+  overflow-x: scroll;
+}
+.ResponsiveFilter_span span {
+  cursor: pointer;
+  margin-right: 20px;
+  color: var(--secondary);
+  font-size: 16px;
+}
+.ResponsiveFilter_span span:hover {
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 15px;
+}
+
+.activeCheckList {
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 15px;
+  
 }

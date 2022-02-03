@@ -8,6 +8,8 @@ import useApi from "../../../Hooks/useApi";
 import { useNavigate } from "react-router";
 import { Spinner } from "react-bootstrap";
 import Cookies from "js-cookie";
+import { useDispatch } from "react-redux";
+import checkAuth from "../../../store/action/checkAuth";
 
 const Registration = () => {
   const { showPassword } = useMethod();
@@ -16,18 +18,15 @@ const Registration = () => {
   const { foodHubAPI } = useApi();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
+  const dispatch = useDispatch()
 
   const onSubmit = (data) => {
     setIsLoading(true);
-    const email = localStorage.getItem("email");
-    const user_info = {
-      firstName: data.firstName,
-      lastName: data.lastName,
-      email: email,
-      phone: data.phone,
-      password: data.password,
+    const number = localStorage.getItem("number");
+    data = {
+      phone: number,
+      ...data
     };
-    console.log(user_info);
     if (data.password !== data.changedPassword) {
       setError("Confirm Password doesn't match");
     } else {
@@ -38,16 +37,14 @@ const Registration = () => {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(user_info),
+        body: JSON.stringify(data),
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.status === "success") {
-            console.log(data);
-            localStorage.setItem("user", JSON.stringify(data.payload));
-            Cookies.set("__act", data?.payload?.token);
-            Cookies.set("__rt", data?.payload?.refreshToken);
-            localStorage.removeItem("email");
+            dispatch(checkAuth(data.user));
+            localStorage.setItem("user", JSON.stringify(data));
+            localStorage.removeItem("number");
             navigate("/user/profile");
           } else {
             alert("there were some error. Please try again");
@@ -64,9 +61,9 @@ const Registration = () => {
           <h3>Let's get you started!</h3>
           <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
             <input
-              type="number"
-              placeholder="Phone Number"
-              {...register("phone")}
+              type="email"
+              placeholder="Email"
+              {...register("email")}
               required
             />
             <div className="register_user_name">

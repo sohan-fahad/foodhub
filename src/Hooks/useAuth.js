@@ -1,50 +1,70 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Navigate, useNavigate, useRoutes } from "react-router";
+import checkAuth from "../store/action/checkAuth";
 import useApi from "./useApi";
 
 const useAuth = () => {
-  const [user, setUser] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [auth, setAuth] = useState(false);
-  const [userInfo, setUserInfo] = useState({});
-  const [email, setEmail] = useState("");
-  const [restaurantPath, setRestaurantPath] = useState(false);
 
-  const handleEmail = (e) => {
-    const user_email = e.target.value;
-    setEmail(user_email);
-  };
+  const { foodHubAPI } = useApi()
+  const dispatch = useDispatch()
+  const userDetails = { refreshToken: JSON.parse(localStorage.getItem("user")) };
+  const userInfo = userDetails?.refreshToken
 
+  //add data we are interested in tracking to an array
 
+  const currentTime = new Date();
+  const expireTime = currentTime.setHours(currentTime.getHours() + 24);
 
+  const handleExpirerTIme = () => {
+    localStorage.setItem("expire_session", expireTime)
+  }
 
   useEffect(() => {
-    const userDetails = JSON.parse(localStorage.getItem("user"));
-    if (userDetails) {
-      const { payload } = userDetails;
-      if (payload.token) {
-        setUserInfo(payload);
-        setUser(true);
+    const currentTime = new Date()
+    const currentSession = currentTime.setHours(currentTime.getHours())
+    const preSession = localStorage.getItem("expire_session")
+
+    if (preSession) {
+      dispatch(checkAuth(userInfo.user))
+      if (preSession < currentSession) {
+        localStorage.removeItem("user")
+        localStorage.removeItem("expire_session")
+        localStorage.removeItem("headerPopup")
       }
-    } else {
-      setUserInfo({});
-      setUser(false);
+
+      else if (preSession > currentSession) {
+        localStorage.setItem("expire_session", expireTime)
+        const userData = {
+          ...userInfo
+        };
+        fetch(`${foodHubAPI}/auth/refreshtoken`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        })
+          .then(res => res.json())
+          .then(data => {
+            const userCredential = {
+              ...userInfo, ...data
+            }
+            localStorage.setItem("user", JSON.stringify(userCredential))
+          })
+      }
     }
-  }, []);
+  }, [userDetails])
+
+
+
+
+
+
+
 
   return {
-    user,
-    setUser,
-    userInfo,
-    setUserInfo,
-    isLoading,
-    setIsLoading,
-    setAuth,
-    auth,
-    email,
-    handleEmail,
-    setRestaurantPath,
-    restaurantPath,
+    handleExpirerTIme
   };
 };
 

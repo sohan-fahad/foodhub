@@ -1,0 +1,47 @@
+.DeliveryPickUp{
+    margin-top: 50px;
+}
+.DeliveryPickUp_wrapper {
+    position: relative;
+    cursor: pointer;
+}
+.DeliveryPickUp .delivery {
+    background-image: url("../../../images/delivery.webp");
+    height: 100px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    z-index: 0;
+}
+.DeliveryPickUp .pickup {
+    background-image: url("../../../images/delivery.webp");
+    height: 100px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+}
+
+.DeliveryPickUp h3 {
+    font-size: 24px;
+    color: var(--primary);
+    padding-left: 15px;
+}
+.DeliveryPickUp .delivery_overlay {
+    background-image: linear-gradient(rgba(165, 165, 165, 0.336), rgba(165, 165, 165, 0.336));
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.isActiveDelivery {
+    border-bottom: 5px solid var(--primary);
+    background-image: none;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}

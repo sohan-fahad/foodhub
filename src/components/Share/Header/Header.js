@@ -8,45 +8,53 @@ import CorporateHeader from "../../Corporate/CorporateHeader/CorporateHeader"
 import { useLocation } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import checkAuth from "../../../store/action/checkAuth";
-import logOut from "../../../store/action/LogOut";
 import store from "../../../store/store";
 import Cookies from "js-cookie";
 import TopMenu from "../TopMenu/TopMenu";
 
 const Header = () => {
 
+  const headerPopup = localStorage.getItem("headerPopup")
   const { closeHeaderReducer } = store.getState();
   const location = useLocation().pathname;
   const navigate = useNavigate();
 
+
+
   const [pathLocation, setPathLocation] = useState("")
+  const [userName, setUserName] = useState("")
 
   const dispatch = useDispatch();
-  const { token, firstName } = useSelector((state) => state.authCheckReducer);
   const userDetails = JSON.parse(localStorage.getItem("user"));
+
+  useEffect(() => {
+    if (userDetails) {
+      setUserName(userDetails?.user.firstName)
+    }
+    else {
+      setUserName("")
+    }
+  }, [userDetails])
+
+
 
   const logOutUser = (e) => {
     e.preventDefault();
     dispatch(checkAuth({}));
-    dispatch(logOut({}));
-    Cookies.remove("__act");
-    Cookies.remove("__rt");
     localStorage.removeItem("user");
-    localStorage.removeItem("email");
+    localStorage.removeItem("expire_session");
     navigate("/");
   };
 
-  useEffect(() => {
-    if (userDetails) {
-      dispatch(checkAuth(userDetails.payload));
-    }
-  }, []);
+
 
   useEffect(() => {
     if (location === "/restaurant/new") {
       setPathLocation("find");
+
     } else if (location === "/restaurantdetails") {
       setPathLocation("find");
+
     } else if (location === "/corporate") {
       setPathLocation("corporate");
     }
@@ -61,7 +69,7 @@ const Header = () => {
   return (
     <>
       <div className="Header sticky-top" id="Header">
-        {closeHeaderReducer && <TopMenu></TopMenu>}
+        {closeHeaderReducer && !headerPopup && <TopMenu></TopMenu>}
         <div className="container">
           <div className="header_container">
             <Navbar.Brand as={Link} to="/" className="brand_Logo">
@@ -76,7 +84,7 @@ const Header = () => {
             {
               pathLocation === "corporate" ? <CorporateHeader></CorporateHeader> :
                 <div className="d-flex">
-                  {!token ? (
+                  {!userDetails ? (
                     <Nav.Link as={HashLink} to="/auth/new">
                       LOGIN
                     </Nav.Link>
@@ -84,7 +92,7 @@ const Header = () => {
                     <div className="user_menu_container">
                       <i className="fas fa-user"></i>
                       <NavDropdown
-                        title={firstName || "NAME"}
+                        title={userName}
                         id="navbarScrollingDropdown"
                         className="user_profile"
                       >
@@ -101,6 +109,9 @@ const Header = () => {
 
                         <NavDropdown.Item as={HashLink} to="/user/vouchers">
                           VOUCHER
+                        </NavDropdown.Item>
+                        <NavDropdown.Item as={HashLink} to="/rewards/challenges">
+                          CHALLENGES
                         </NavDropdown.Item>
                         <NavDropdown.Item as={HashLink} to="/user/help">
                           HELP CENTER

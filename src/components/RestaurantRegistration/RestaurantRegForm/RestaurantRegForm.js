@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import useApi from "../../../Hooks/useApi";
 import "./RestaurantRegForm.css";
 import registerRestaurant from "../../../store/action/registerRestaurant";
+import Swal from "sweetalert2";
 
 const RestaurantRegForm = () => {
   const { register, handleSubmit, watch, reset } = useForm();
@@ -12,19 +13,23 @@ const RestaurantRegForm = () => {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    fetch(`${foodHubAPI}/user/register-restaurant`,{
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
+    fetch(`${foodHubAPI}/user/register-restaurant`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "success") {
           dispatch(registerRestaurant(data.payload));
+          Swal.fire(
+            'Successful!',
+            'Your successfully submitted.',
+            'success'
+          )
           reset()
-          // localStorage.setItem("restaurantInfo", JSON.stringify(data));
         } else {
           alert("error");
         }

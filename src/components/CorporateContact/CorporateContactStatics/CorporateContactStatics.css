@@ -1,0 +1,33 @@
+.CorporateContactStatics {
+    padding: 100px 0;
+}
+
+.CorporateContactStatics h3 {
+    font-size: 24px;
+    color: var(--secondary);
+}
+
+.CorporateContactStatics strong {
+    color: var(--title);
+}
+.CorporateContactStatics p {
+    font-size: 16px;
+    color: var(--secondary);
+}
+
+
+@media screen and (max-width: 991px) {
+    .CorporateContactStatics {
+        padding-bottom: 20px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .CorporateContactStatics {
+        padding-bottom: 80px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .CorporateContactStatics {
+        padding: 50px 0;
+    }
+}

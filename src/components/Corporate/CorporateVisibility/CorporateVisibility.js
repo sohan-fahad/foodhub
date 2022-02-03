@@ -1,6 +1,8 @@
 import React from 'react';
 import "./CorporateVisibility.css"
 import visibilityImg from "../../../images/corporatevisibility.jpg"
+import { Nav } from 'react-bootstrap';
+import { HashLink } from 'react-router-hash-link';
 
 const CorporateVisibility = () => {
     return (
@@ -14,39 +16,19 @@ const CorporateVisibility = () => {
                         <div className="CorporateVisibility_info">
                             <h3>Visibility on all expenses</h3>
                             <p>Don’t stress. We designed foodhub for business for full visibility of orders on a single dashboard – so you can forget about counting hundreds of receipts.</p>
+
                             <ul>
-                                <li>
-                                    <div className='CorporateVisibility_list'>
-                                        <div className='me-3'></div>
-                                        <p className='m-0'>Set allowance limits based on day, time, location, service</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className='CorporateVisibility_list'>
-                                        <div className='me-3'></div>
-                                        <p className='m-0'>Easy employee management, onboarding, and compliance</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className='CorporateVisibility_list'>
-                                        <div className='me-3'></div>
-                                        <p className='m-0'>Streamlined monthly or bi-monthly invoicing</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className='CorporateVisibility_list'>
-                                        <div className='me-3'></div>
-                                        <p className='m-0'>Pre-orders up to 14 days in advance</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className='CorporateVisibility_list'>
-                                        <div className='me-3'></div>
-                                        <p className='m-0 text-start'>Dedicated account manager</p>
-                                    </div>
-                                </li>
+
+                                <li>Set allowance limits based on day, time, location, service</li>
+                                <li>Easy employee management, onboarding, and compliance</li>
+                                <li>Streamlined monthly or bi-monthly invoicing</li>
+                                <li>Pre-orders up to 14 days in advance</li>
+                                <li>Dedicated account manager</li>
                             </ul>
-                            <button>FIND OUT MORE</button>
+
+                            <Nav.Link as={HashLink} to="/corporate#CorporateSingUp">
+                                FIND OUT MORE
+                            </Nav.Link>
                         </div>
                     </div>
                 </div>

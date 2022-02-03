@@ -7,42 +7,6 @@ import "./CuisinesSlider.css";
 import OfferSliderCard from "../OfferSliderCard/OfferSliderCard";
 
 const CuisinesSlider = () => {
-  let settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    initialSlide: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: true,
-        },
-      },
-    ],
-  };
 
   const offerSlider = [
     {
@@ -66,18 +30,17 @@ const CuisinesSlider = () => {
       slider: "https://i.ibb.co/PWBfmYV/offer-Slider.jpg",
     },
   ];
+
+  const items = []
+
+  offerSlider.forEach(pd => {
+    items.push(<img src={pd?.slider} alt="" className="img-fluid w-100 px-2" />)
+  });
+
   return (
     <div className="CuisinesSlider">
       <div className="container">
-        <h3>Cuisines</h3>
-        <Slider {...settings}>
-          {offerSlider.map((pd) => (
-            <OfferSliderCard
-              key={pd?.id}
-              sliderImg={pd?.slider}
-            ></OfferSliderCard>
-          ))}
-        </Slider>
+        <OfferSliderCard items={items} title={"Cuisines"} />
       </div>
     </div>
   );

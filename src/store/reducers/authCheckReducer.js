@@ -1,10 +1,10 @@
 const initialState = {};
 
 const authCheckReducer = (state = initialState, action) => {
-  if (action.type === "AUTH_CHECK") {
-    return (state = action.payload);
-  } else {
-    return (state = {});
+  switch (action.type) {
+    case "AUTH_CHECK":
+      return { ...state, user: action?.payload };
+    default: return state
   }
 };
 
