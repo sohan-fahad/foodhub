@@ -1,9 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "./PersonalDetails.css";
 
 const PersonalDetails = () => {
-  const userInfo = JSON.parse(localStorage.getItem("user"));
-  const { firstName, lastName, email, phone } = userInfo.payload;
+  const { user } = useSelector((state) => state.authCheckReducer)
+  console.log(user);
+  const { firstName, lastName, email, phone } = user;
   return (
     <div className="PersonalDetails">
       <div className="PersonalDetails_title">

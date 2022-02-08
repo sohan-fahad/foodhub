@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 import "./RestaurantInfo.css";
 import fizza from "../../../images/fizza.jpg";
 import AboutRestaurant from "../AboutRestaurant/AboutRestaurant";
 import RestaurantReviews from "../RestaurantReviews/RestaurantReviews";
+import { useSelector } from "react-redux";
 
 const RestaurantInfo = () => {
   const [resInfo, setResInfo] = useState(false);
   const [show, setShow] = useState(false);
+
+  const { restaurantInfo } = useSelector(state => state.restaurantInfoReducer)
+  // console.log(restaurantInfo);
+
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -17,7 +22,7 @@ const RestaurantInfo = () => {
       <div className="container">
         <div className="restaurant_wrapper">
           <div className="RestaurantInfo_name">
-            <h3>Delicious Pizza House</h3>
+            <h3>{restaurantInfo?.name}</h3>
             <div className="RestaurantInfo_review">
               <p>25% OFF+BUY 1 GET 1</p>
               <p>
@@ -71,7 +76,7 @@ const RestaurantInfo = () => {
                 className="text-center "
                 style={{ fontSize: "24px", fontWeight: 700, color: "#444444" }}
               >
-                Al Kaderia Restaurant - Rampura Bazar
+                {restaurantInfo?.name}
                 <span style={{ fontSize: "16px" }}>
                   <i className="fas fa-star" style={{ color: "yellow" }}></i>
                   <span>4.1/5 </span>

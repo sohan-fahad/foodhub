@@ -10,6 +10,7 @@ const useAuth = () => {
   const dispatch = useDispatch()
   const userDetails = { refreshToken: JSON.parse(localStorage.getItem("user")) };
   const userInfo = userDetails?.refreshToken
+  console.log(userInfo);
 
   //add data we are interested in tracking to an array
 
@@ -20,10 +21,12 @@ const useAuth = () => {
     localStorage.setItem("expire_session", expireTime)
   }
 
+
   useEffect(() => {
     const currentTime = new Date()
     const currentSession = currentTime.setHours(currentTime.getHours())
     const preSession = localStorage.getItem("expire_session")
+
 
     if (preSession) {
       dispatch(checkAuth(userInfo.user))
@@ -42,6 +45,7 @@ const useAuth = () => {
           method: "POST",
           headers: {
             "content-type": "application/json",
+            "refreshToken": `${userInfo?.refreshToken}`
           },
           body: JSON.stringify(userData),
         })

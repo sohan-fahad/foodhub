@@ -6,8 +6,15 @@ import RestaurantItems from "../RestaurantItems/RestaurantItems";
 import RestaurantOffer from "../RestaurantOffer/RestaurantOffer";
 import CartSection from "../CartSection/CartSection";
 import ResponsiveCart from "../ResponsiveCart/ResponsiveCart";
+import { useParams } from "react-router";
+import { useEffect } from "react";
+import useApi from "../../../Hooks/useApi";
+import { useDispatch } from "react-redux";
+import restaurantDetails from "../../../store/action/restaurantInfo";
 
 const RestaurantDetails = () => {
+
+
   return (
     <div className="RestaurantDetails">
       <div className="row">

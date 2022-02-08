@@ -48,7 +48,6 @@ const LoginPassword = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.user);
         if (data.accessToken) {
           localStorage.setItem("user", JSON.stringify(data));
           localStorage.removeItem("number")

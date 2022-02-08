@@ -9,3 +9,9 @@
     margin-bottom: 15px;
     font-size: 36px;
 }
+
+@media screen and (max-width: 600px) {
+    .AllRestaurants h3 {
+        font-size: 24px;
+    }
+}

@@ -2,22 +2,43 @@ import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import "./RestaurantItem.css";
 import mealImg from "../../../images/mealImg.jpg";
+import itemImg from "../../../images/item.jpg"
+import useApi from "../../../Hooks/useApi"
+import { useParams } from "react-router";
+import restaurantDetails from "../../../store/action/restaurantInfo";
 
 const RestaurantItem = ({ product }) => {
   const [show, setShow] = useState(false);
+  const [itemDetails, setItemDetails] = useState({})
+  const [itemGroup, setItemGroup] = useState([])
+
+  const { id } = useParams()
+
+  const { foodHubAPI } = useApi()
+
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+  const handleShow = async () => {
+    await fetch(`${foodHubAPI}/user/items/${product.id}/${id}`)
+      .then(async (res) => await res.json())
+      .then(async (data) => {
+        await setItemGroup(data?.payload?.item_mapping?.item_group_mapping?.item_group)
+        await setItemDetails(data.payload)
+        setShow(true)
+      })
+
+  };
   return (
     <div className="col-lg-6 col-12">
       <div className="RestaurantItem">
         <div>
           <h3>{product?.name}</h3>
-          <p>{product?.detail}</p>
+          <p>{product?.description}</p>
           <p>{product?.price}৳</p>
         </div>
         <div className="item_img">
-          <img src={product?.itemImg} alt="" />
+          <img src={product?.itemImg || itemImg} alt="" />
           <i className="fas fa-plus" onClick={handleShow}></i>
         </div>
       </div>
@@ -52,12 +73,17 @@ const RestaurantItem = ({ product }) => {
                 color: "var(--title)",
               }}
             >
-              Buy 1 Fried Chicken Wings
+              {product?.name}
             </h3>
             <p className="second_color m-0">Get another one free</p>
             <hr />
             <div className="meals-title">
-              <h3>Select variation</h3>
+              {
+                // itemGroup.map(pd => <div>
+                //   <h3>{pd?.name}</h3>
+                // </div>)
+              }
+              <h3>{itemGroup?.name}</h3>
               <p>1 Required</p>
             </div>
             <div className="meal_size">

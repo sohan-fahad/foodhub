@@ -57,9 +57,10 @@ function App() {
               <Route path="orders" element={<UserOrderList />} />
               <Route path="refund" element={<RefundBalance />} />
               <Route path="help" element={<HelpCenter />} />
-              <Route path="restaurant/id" element={<RestaurantDetails />} />
               <Route path="checkout" element={<CheckOut />} />
             </Route>
+
+            <Route path="restaurant/:id" element={<RestaurantDetails />} />
 
 
 
@@ -71,7 +72,7 @@ function App() {
             <Route path="/rewards/challenges" element={<Rewards />} />
             <Route path="/rewards/challenges/:id" element={<ChallengeDetails />} />
 
-            <Route path="/checkout" element={<PrivateUser><CheckOut /></PrivateUser>} />
+            <Route path="/checkout" element={<CheckOut />} />
 
           </Routes>
           <Footer></Footer>

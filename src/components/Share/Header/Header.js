@@ -26,15 +26,16 @@ const Header = () => {
 
   const dispatch = useDispatch();
   const userDetails = JSON.parse(localStorage.getItem("user"));
+  const { user } = useSelector((state) => state.authCheckReducer)
 
   useEffect(() => {
     if (userDetails) {
-      setUserName(userDetails?.user.firstName)
+      setUserName(user?.firstName)
     }
     else {
       setUserName("")
     }
-  }, [userDetails])
+  }, [user?.firstName])
 
 
 
@@ -111,7 +112,7 @@ const Header = () => {
                           VOUCHER
                         </NavDropdown.Item>
                         <NavDropdown.Item as={HashLink} to="/rewards/challenges">
-                          CHALLENGES
+                          REWARDS
                         </NavDropdown.Item>
                         <NavDropdown.Item as={HashLink} to="/user/help">
                           HELP CENTER

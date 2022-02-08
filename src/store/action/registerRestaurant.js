@@ -2,7 +2,7 @@ import React from "react";
 
 const registerRestaurant = (info) => {
   return {
-    type: "Restaurant_Register",
+    type: "REGISTER_RESTAURANT",
     payload: info,
   };
 };

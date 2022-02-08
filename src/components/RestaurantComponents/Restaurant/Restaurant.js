@@ -1,12 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import restaurantImg from "../../../images/Slider/offerSlider.jpg"
 import "./Restaurant.css"
 
 const Restaurant = ({ restaurant }) => {
-    const { name, rating, average_cost, tk, category, fee } = restaurant
-    console.log(restaurant);
+    const { name, rating, average_cost, tk, category, fee, id } = restaurant
+    const navigate = useNavigate()
     return (
-        <div className='col-lg-3 col-sm-4 col-12'>
+        <div className='col-lg-3 col-sm-4 col-12' onClick={() => navigate(`/restaurant/${id}`)} style={{ cursor: "pointer" }}>
             <div className='Restaurant_card'>
                 <img src={restaurantImg} alt="" className='w-100' />
                 <div className='Restaurant_card_title'>
@@ -17,7 +18,7 @@ const Restaurant = ({ restaurant }) => {
                 <hr />
                 <div className='d-flex justify-content-between'>
                     <p class="brand_color"><i className="far fa-heart me-2"></i> 12</p>
-                    <p>12<span> tk</span> <span class="second_title">Delivery fee</span></p>
+                    <p>{tk}<span> tk</span> <span class="second_title">{fee}</span></p>
                 </div>
             </div>
         </div>

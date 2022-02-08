@@ -19,7 +19,7 @@ const CartSection = () => {
   //   scrollTop >= 150 ? header.classList.add('is-sticky') : header.classList.remove('is-sticky');
   // };
   return (
-    <div className="CartSection mt-5">
+    <div className="CartSection mt-5 px-3">
       <div className="cart_items">
         <p className="text-center fw-bold m-0">Your Cart</p>
         <p className="text-center second_color">

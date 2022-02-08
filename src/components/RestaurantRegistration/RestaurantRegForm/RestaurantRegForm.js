@@ -69,6 +69,7 @@ const RestaurantRegForm = () => {
               />
               <label>What is the average cost of a meal for one person?</label>
               <select name="" id="" {...register("average_cost")}>
+                <option value="" disabled selected>average</option>
                 <option value="$">$</option>
                 <option value="$$">$$</option>
                 <option value="$$$">$$$</option>
@@ -119,6 +120,7 @@ const RestaurantRegForm = () => {
                     Your Role <span className="brand_color">*</span>
                   </label>
                   <select name="" id="" {...register("role")} required>
+                    <option value="" disabled selected>Role</option>
                     <option value="1">Manager</option>
                     <option value="2">Supervisor</option>
                   </select>

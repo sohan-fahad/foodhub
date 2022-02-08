@@ -10,6 +10,7 @@ import { Spinner } from "react-bootstrap";
 import Cookies from "js-cookie";
 import { useDispatch } from "react-redux";
 import checkAuth from "../../../store/action/checkAuth";
+import useAuthentication from "../../../Hooks/useAuthentication";
 
 const Registration = () => {
   const { showPassword } = useMethod();
@@ -19,6 +20,8 @@ const Registration = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch()
+
+  const { handleExpirerTIme } = useAuthentication()
 
   const onSubmit = (data) => {
     setIsLoading(true);
@@ -43,9 +46,7 @@ const Registration = () => {
         .then((data) => {
           if (data.status === "success") {
             dispatch(checkAuth(data.user));
-            localStorage.setItem("user", JSON.stringify(data));
-            localStorage.removeItem("number");
-            navigate("/user/profile");
+            navigate("/auth/phone/password");
           } else {
             alert("there were some error. Please try again");
           }
