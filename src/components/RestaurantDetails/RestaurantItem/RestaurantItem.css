@@ -72,12 +72,15 @@
   align-items: center;
 }
 
-.meal_add_wrapper button {
+.meal_add_wrapper p {
   background-color: #fff;
   border: none;
   color: var(--primary);
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 500;
+  margin: 0;
+  cursor: pointer;
+  padding: 5px;
 }
 
 .meal_add_wrapper input {
@@ -104,4 +107,13 @@
   color: #fff;
   font-weight: 700;
   font-size: 16px;
+}
+
+.meal_size .form-check-input:checked {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+.form-check-input:checked {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
 }

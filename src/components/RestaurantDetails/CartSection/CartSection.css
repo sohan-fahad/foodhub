@@ -5,6 +5,7 @@
 .CartSection .cart_items_wrapper {
   max-height: 350px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .CartSection button {
@@ -16,6 +17,11 @@
   font-weight: 700;
   padding: 10px 15px;
   color: #fff;
+}
+.CartSection button:disabled,
+button[disabled]{
+  background-color: #cccccc;
+  color: var(--secondary);
 }
 .is-sticky {
     z-index: 999;

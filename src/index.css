@@ -16,6 +16,11 @@ body {
   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
+
+body::-webkit-scrollbar-track {
+  background: var(--primary);        /* color of the tracking area */
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

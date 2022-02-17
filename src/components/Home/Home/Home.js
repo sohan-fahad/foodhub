@@ -14,11 +14,11 @@ const Home = () => {
     <div>
       <HeroBox></HeroBox>
       <WorkProcess></WorkProcess>
-      <RestaurantInfo></RestaurantInfo>
       {/* <ServiceCities></ServiceCities> */}
-      <DownloadApp></DownloadApp>
-      {/* <Blogs></Blogs> */}
       <FoodHubBusiness></FoodHubBusiness>
+      <DownloadApp></DownloadApp>
+      <RestaurantInfo></RestaurantInfo>
+      {/* <Blogs></Blogs> */}
     </div>
   );
 };

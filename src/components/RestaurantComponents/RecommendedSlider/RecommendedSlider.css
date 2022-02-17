@@ -1,0 +1,38 @@
+.RecommendedSlider {
+  padding: 10px;
+  position: relative;
+}
+.RecommendedSlider .title {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.RecommendedSlider .title h5 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--title);
+}
+
+.RecommendedSlider .SliderCardFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.RecommendedSlider .SliderCardFooter p {
+  font-size: 16px;
+}
+.RecommendedSlider .offer_details {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.RecommendedSlider .offer_details p {
+  padding: 5px 10px;
+  background-color: var(--primary);
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}

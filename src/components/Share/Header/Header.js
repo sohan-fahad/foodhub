@@ -15,7 +15,7 @@ import TopMenu from "../TopMenu/TopMenu";
 const Header = () => {
 
   const headerPopup = localStorage.getItem("headerPopup")
-  const { closeHeaderReducer } = store.getState();
+  const headerPopUp = useSelector(state => state.closeHeaderReducer);
   const location = useLocation().pathname;
   const navigate = useNavigate();
 
@@ -70,7 +70,7 @@ const Header = () => {
   return (
     <>
       <div className="Header sticky-top" id="Header">
-        {closeHeaderReducer && !headerPopup && <TopMenu></TopMenu>}
+        {headerPopUp && !headerPopup && <TopMenu></TopMenu>}
         <div className="container">
           <div className="header_container">
             <Navbar.Brand as={Link} to="/" className="brand_Logo">

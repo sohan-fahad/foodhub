@@ -12,7 +12,7 @@ const RestaurantItemsSection = ({ title, secondary, products, id }) => {
       <p className="p-0">{secondary && secondary}</p>
       <div className="row g-3">
         {products.map((product) => (
-          <RestaurantItem key={product?.id} product={product}></RestaurantItem>
+          <RestaurantItem key={product.id} product={product}></RestaurantItem>
         ))}
       </div>
     </div>

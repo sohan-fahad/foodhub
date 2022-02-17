@@ -8,7 +8,7 @@ import useApi from "../../../Hooks/useApi";
 import { useParams } from "react-router";
 import restaurantDetails from "../../../store/action/restaurantInfo";
 
-const RestaurantItems = () => {
+const RestaurantItems = ({ items }) => {
   const products = [
     {
       id: 1,
@@ -33,14 +33,6 @@ const RestaurantItems = () => {
 
   const { id } = useParams()
   const { foodHubAPI } = useApi()
-  useEffect(() => {
-    fetch(`${foodHubAPI}/user/items/restaurants?id=${id}`)
-      .then(res => res.json())
-      .then(data => {
-        setRestaurant(data?.payload?.items)
-        dispatch(restaurantDetails(data?.payload))
-      })
-  }, [id])
 
 
 
@@ -66,7 +58,7 @@ const RestaurantItems = () => {
           <RestaurantItemsSection
             title={"All Items"}
             secondary={"Most ordered right now."}
-            products={restaurant}
+            products={items}
             id="Offer"
           ></RestaurantItemsSection>
         </div>

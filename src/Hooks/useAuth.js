@@ -6,11 +6,12 @@ import useApi from "./useApi";
 
 const useAuth = () => {
 
+  const [control, setControl] = useState(true)
+
   const { foodHubAPI } = useApi()
   const dispatch = useDispatch()
   const userDetails = { refreshToken: JSON.parse(localStorage.getItem("user")) };
   const userInfo = userDetails?.refreshToken
-  console.log(userInfo);
 
   //add data we are interested in tracking to an array
 
@@ -68,7 +69,9 @@ const useAuth = () => {
 
 
   return {
-    handleExpirerTIme
+    handleExpirerTIme,
+    setControl,
+    control
   };
 };
 
