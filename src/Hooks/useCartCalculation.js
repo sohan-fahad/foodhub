@@ -1,6 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useLocation, useParams } from 'react-router';
+import { useNavigate } from 'react-router';
 import totalPrice from '../store/action/totalPrice';
+import { totalQuantity } from '../store/action/totalQuantity';
+// import totalQuantity from '../store/action/totalQuantity';
 import useAuthentication from './useAuthentication';
 
 const useCartCalculation = () => {
@@ -8,23 +12,39 @@ const useCartCalculation = () => {
     const [quantity, setQuantity] = useState(0)
 
     const { control, setControl } = useAuthentication()
-
+    const navigate = useNavigate()
+    const location = useLocation()
+    const { id } = useParams()
 
     let priceObj = {}
+    let quantityObj = {}
     let deliveryFee = 12
     const dispatch = useDispatch()
     let itemsArray = []
 
     useEffect(() => {
         itemsArray = JSON.parse(localStorage.getItem("cartItems"))
+        const restaurantId = JSON.parse(localStorage.getItem("rstid"))
         setCartList(itemsArray)
         if (cartList) {
-            cartList.forEach(pd => {
-                priceObj[`item${pd?.id}`] = pd?.subTotal
-            });
-            dispatch(totalPrice(priceObj, deliveryFee))
-            controllerState()
+            if (restaurantId == id || location.pathname === "/user/checkout") {
+                cartList.forEach(pd => {
+                    priceObj[`item${pd?.itemId}`] = pd?.subTotal
+                    quantityObj[`item${pd?.itemId}`] = pd?.itemQuantity
+                });
+                dispatch(totalPrice(priceObj, deliveryFee))
+                dispatch(totalQuantity(quantityObj, location?.pathname))
+            }
+            else {
+                localStorage.removeItem("cartItems")
+                localStorage.removeItem("qtnty")
+                dispatch(totalQuantity({}, ""))
+            }
         }
+        else {
+            JSON.stringify(localStorage.setItem("rstid", id))
+        }
+        controllerState()
 
     }, [!control])
 
@@ -35,12 +55,15 @@ const useCartCalculation = () => {
 
 
     // this function for increment-decrement item quantity and set the value in local store
-    const handleQuantity = async (id, action) => {
-        let items = await JSON.parse(localStorage.getItem("cartItems"))
-        let item = await items.find(pd => pd.id === id)
-        let itemIndex = cartList.findIndex(pd => pd.id === id)
+    const handleQuantity = async (action, itemID) => {
 
-        let itemQuantity = parseInt(document.getElementById(`item${id}`).value)
+        let items = await JSON.parse(localStorage.getItem("cartItems"))
+        let item = await items.find(pd => pd.itemId === itemID)
+        let itemIndex = cartList.findIndex(pd => pd.itemId === itemID)
+
+        let itemQuantity = parseInt(document.getElementById(`item${itemID}`).value)
+
+
         let avgSubTotal = item.subTotal / itemQuantity
 
         if (action === "increment") {
@@ -68,10 +91,17 @@ const useCartCalculation = () => {
         }
         setControl(!control)
     }
+
+    const handleCheckoutPath = () => {
+        localStorage.setItem("exptPth", "/user/checkout")
+        navigate("/user/checkout")
+    }
+
     return {
         cartList,
         deliveryFee,
         handleQuantity,
+        handleCheckoutPath,
         priceObj,
         quantity
     };

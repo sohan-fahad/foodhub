@@ -49,11 +49,13 @@ const LoginPassword = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.accessToken) {
+          const url = localStorage.getItem("exptPth")
           localStorage.setItem("user", JSON.stringify(data));
           localStorage.removeItem("number")
           handleExpirerTIme()
           dispatch(checkAuth(data.user));
-          navigate("/user/profile");
+          navigate(url ? url : "/user/profile");
+          localStorage.removeItem("exptPth")
           reset();
         } else {
           alert("Error");

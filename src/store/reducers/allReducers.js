@@ -3,6 +3,7 @@ import closeHeaderReducer from "./closeHeaderReducer"
 import deliverReducers from "./deliverReducers"
 import restaurantInfoReducer from "./restaurantInfoReducer"
 import totalPriceReducer from "./totalPriceReducer"
+import totalQuantityReducer from "./totalQuantityReducer"
 import { combineReducers } from "redux";
 
 const allReducers = combineReducers({
@@ -10,7 +11,8 @@ const allReducers = combineReducers({
   authCheckReducer,
   deliverReducers,
   restaurantInfoReducer,
-  totalPriceReducer
+  totalPriceReducer,
+  totalQuantityReducer
 });
 
 export default allReducers;

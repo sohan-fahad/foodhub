@@ -1,14 +1,15 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router";
 import { useNavigate } from "react-router";
 import useCartCalculation from "../../../Hooks/useCartCalculation";
 import "./CartSection.css";
 
-const CartSection = () => {
+const CartSection = ({ title }) => {
 
-  const { cartList, deliveryFee, handleQuantity, quantity } = useCartCalculation()
+  const { cartList, deliveryFee, handleQuantity, handleCheckoutPath, quantity } = useCartCalculation()
 
-  const navigate = useNavigate()
+  const location = useLocation()
 
 
   const { total, subtotal } = useSelector((state) => state.totalPriceReducer)
@@ -19,16 +20,16 @@ const CartSection = () => {
       <div className="cart_items">
         <p className="text-center fw-bold m-0">Your Cart</p>
         <p className="text-center second_color">
-          Start adding items to your cart
+          {title}
         </p>
 
         <div className="cart_items_wrapper">
           {
             cartList && cartList.map(pd =>
-              <div className="row mb-3 justify-content-between pe-2" key={pd?.id}>
+              <div className="row mb-3 justify-content-between pe-2" key={pd?.itemId}>
                 <div className="col-6">
                   <label className="brand_color fw-bold">{pd?.name}</label>
-                  <div className="second_title">{pd?.selectVariant?.ingredient && `+${pd?.selectVariant?.ingredient}`}</div>
+                  <div className="second_title">{pd?.SelectVarient}</div>
                   {
                     pd?.ingredients?.map(item => <div key={item?.id}>{item?.ingredient && `+${item?.ingredient}`}</div>)
                   }
@@ -40,19 +41,19 @@ const CartSection = () => {
                     {
                       quantity === 1 ?
                         <i className="fas fa-trash-alt"
-                          onClick={() => handleQuantity(pd?.id, "decrement")}
+                          onClick={() => handleQuantity("decrement", pd?.itemId)}
                           style={{ cursor: "pointer", fontSize: "12px" }}
                         >
                         </i>
                         :
-                        <i className="fas fa-minus disable-select" style={{ cursor: "pointer", fontSize: "12px" }} onClick={() => handleQuantity(pd?.id, "decrement")}></i>
+                        <i className="fas fa-minus disable-select" style={{ cursor: "pointer", fontSize: "12px" }} onClick={() => handleQuantity("decrement", pd?.itemId)}></i>
                     }
 
-                    <input className="w-75 border-0 text-center" id={`item${pd?.id}`} value={pd?.itemQuantity} />
+                    <input className="w-75 border-0 text-center" id={`item${pd?.itemId}`} value={pd?.itemQuantity} />
 
                     <i className="fas fa-plus disable-select"
                       style={{ cursor: "pointer", fontSize: "12px" }}
-                      onClick={() => handleQuantity(pd?.id, "increment")}>
+                      onClick={() => handleQuantity("increment", pd?.itemId)}>
                     </i>
 
                   </div>
@@ -87,7 +88,10 @@ const CartSection = () => {
             </div>
           </div>
         }
-        <button onClick={() => navigate("/user/checkout")} disabled={cartList ? false : true} >GO TO CHECK OUT</button>
+        {
+          location.pathname === "/user/checkout" ? "" : <button onClick={handleCheckoutPath} disabled={cartList ? false : true} >GO TO CHECK OUT</button>
+        }
+
       </div>
     </div >
   );

@@ -9,6 +9,8 @@ const RestaurantInfo = ({ restaurant }) => {
   const [resInfo, setResInfo] = useState(false);
   const [show, setShow] = useState(false);
 
+  JSON.stringify(localStorage.setItem("restaurantName", restaurant?.name))
+
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Nav, Navbar, NavDropdown, Offcanvas } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
@@ -8,16 +8,21 @@ import CorporateHeader from "../../Corporate/CorporateHeader/CorporateHeader"
 import { useLocation } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import checkAuth from "../../../store/action/checkAuth";
-import store from "../../../store/store";
-import Cookies from "js-cookie";
 import TopMenu from "../TopMenu/TopMenu";
+import useAuthentication from "../../../Hooks/useAuthentication";
+import { totalQuantity } from "../../../store/action/totalQuantity";
 
 const Header = () => {
+
+  const [showName, setShowName] = useState(true)
+  // const [cartInfo, setCartInfo] = useState({})
 
   const headerPopup = localStorage.getItem("headerPopup")
   const headerPopUp = useSelector(state => state.closeHeaderReducer);
   const location = useLocation().pathname;
   const navigate = useNavigate();
+
+  const { control, setControl } = useAuthentication()
 
 
 
@@ -27,6 +32,8 @@ const Header = () => {
   const dispatch = useDispatch();
   const userDetails = JSON.parse(localStorage.getItem("user"));
   const { user } = useSelector((state) => state.authCheckReducer)
+  const { headerQuantity, restaurantPath } = useSelector((state) => state.totalQuantityReducer)
+
 
   useEffect(() => {
     if (userDetails) {
@@ -44,9 +51,13 @@ const Header = () => {
     dispatch(checkAuth({}));
     localStorage.removeItem("user");
     localStorage.removeItem("expire_session");
+    localStorage.removeItem("cartItems");
+    localStorage.removeItem("qtnty");
+    localStorage.removeItem("rstid");
+    dispatch(totalQuantity({}, ""))
     navigate("/");
+    setControl(!control)
   };
-
 
 
   useEffect(() => {
@@ -64,6 +75,15 @@ const Header = () => {
     }
 
   }, [location])
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 768) {
+      setShowName(false);
+    }
+    else {
+      setShowName(true)
+    }
+  });
 
 
 
@@ -84,7 +104,7 @@ const Header = () => {
 
             {
               pathLocation === "corporate" ? <CorporateHeader></CorporateHeader> :
-                <div className="d-flex">
+                <div className="d-flex align-items-center">
                   {!userDetails ? (
                     <Nav.Link as={HashLink} to="/auth/new">
                       LOGIN
@@ -93,7 +113,7 @@ const Header = () => {
                     <div className="user_menu_container">
                       <i className="fas fa-user"></i>
                       <NavDropdown
-                        title={userName}
+                        title={showName ? userName : ""}
                         id="navbarScrollingDropdown"
                         className="user_profile"
                       >
@@ -124,10 +144,12 @@ const Header = () => {
                     </div>
                   )}
 
-                  <a href="#">
-                    <i className="fas fa-shopping-bag"></i>
-                    <span>0</span>
-                  </a>
+                  <Nav.Link as={HashLink} to={restaurantPath ? restaurantPath : "/"}>
+                    <div className="d-flex">
+                      <i className="fas fa-shopping-bag"></i>
+                      <span>{headerQuantity ? headerQuantity : ""}</span>
+                    </div>
+                  </Nav.Link>
                 </div>
             }
 

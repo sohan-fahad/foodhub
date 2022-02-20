@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Navigate, useNavigate, useRoutes } from "react-router";
 import checkAuth from "../store/action/checkAuth";
+import { headerCartQuantity } from "../store/action/totalQuantity";
 import useApi from "./useApi";
 
 const useAuth = () => {
@@ -27,6 +28,12 @@ const useAuth = () => {
     const currentTime = new Date()
     const currentSession = currentTime.setHours(currentTime.getHours())
     const preSession = localStorage.getItem("expire_session")
+    const orderQuantity = JSON.parse(localStorage.getItem("qtnty"))
+    // headerCartQuantity
+
+    if (orderQuantity) {
+      dispatch(headerCartQuantity(orderQuantity?.totalQuantity, orderQuantity?.restaurantPath))
+    }
 
 
     if (preSession) {

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useAlert } from "react-alert";
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router';
 import totalPrice from '../store/action/totalPrice';
 import useApi from './useApi';
 import useAuthentication from './useAuthentication';
@@ -9,12 +11,17 @@ import useCartCalculation from './useCartCalculation';
 const useItemMapping = () => {
 
     const [show, setShow] = useState(false);
-    const [itemDetails, setItemDetails] = useState([])
     const [itemInfo, setItemsInfo] = useState({})
     const [selectVariant, setSelectVariant] = useState({})
-    const [singleVariant, setSingleVariant] = useState({})
-    const [multipleVariant, setMultipleVariant] = useState({})
     const [allIngredients, setAllIngredients] = useState([])
+    const [quantity, setQuantity] = useState(1)
+
+
+    const { id } = useParams()
+
+
+    const alert = useAlert();
+    let itemId = Math.floor(Math.random() * 644457);
 
 
     // preCart will store local previous local store cart data
@@ -28,6 +35,7 @@ const useItemMapping = () => {
     if (preCart) {
         preCart.forEach(ingredient => {
             items.push(ingredient)
+
         });
     }
 
@@ -48,13 +56,15 @@ const useItemMapping = () => {
         await fetch(`${foodHubAPI}/user/items/${productId}/${id}`)
             .then(async (res) => await res.json())
             .then(async (data) => {
-                if (data.statusCode === 200) {
+                if (await data.statusCode === 200) {
                     setItemsInfo(data.payload[0]);
-                    itemMapping(await data.payload[0].item_mapping.item_group_mapping)
-                    setShow(true)
-                }
-                else {
-                    setShow(true)
+                    if (await data?.payload[0]?.item_mapping) {
+                        itemMapping(await data.payload[0].item_mapping.item_group_mapping)
+                        setShow(true)
+                    }
+                    else {
+                        handleSingleAddCart(data.payload[0])
+                    }
                 }
             })
 
@@ -77,12 +87,15 @@ const useItemMapping = () => {
     }
 
     // this function will store single variant input value 
-    const handleVariantInput = async (id, element, price) => {
-        if (document.getElementById(`${element}`).checked) {
-            let ingredient = document.getElementById(`${element}`).value;
-            let newIngredient = { id, ingredient, price }
-            setSelectVariant(newIngredient);
-        }
+    const handleVariantInput = async (id) => {
+
+
+        // if (document.getElementById(`${element}`).checked) {
+        //     let ingredient = document.getElementById(`${element}`).value;
+        //     let newIngredient = { id, ingredient, price }
+        //     console.log(newIngredient);
+        //     setSelectVariant(newIngredient);
+        // }
         setControl(!control)
     }
 
@@ -112,7 +125,7 @@ const useItemMapping = () => {
 
     // this function will add item in cart
     const handleAddCart = (data) => {
-        console.log(data);
+        JSON.stringify(localStorage.setItem("rstid", id))
         let itemQuantity = parseInt(document.getElementById("quantityInput").value)
 
         const ingredientsPrice = calculateMultiIngredientPrice(ingredients)
@@ -125,9 +138,25 @@ const useItemMapping = () => {
         }
 
 
-        let itemData = { id: itemInfo.id, name: itemInfo.name, itemPrice: itemInfo.price, subTotal, itemQuantity, ingredients, selectVariant, restaurant: itemInfo.restaurant, ...data }
+        let itemData = { id: itemInfo.id, itemId, name: itemInfo.name, itemPrice: itemInfo.price, subTotal, itemQuantity, ingredients, selectVariant, restaurant: itemInfo.restaurant, ...data }
+        handleReduxSubtotal(subTotal, itemData)
+        reset()
+    }
+
+    // this function will add item in cart if item has no ingredient
+    const handleSingleAddCart = (info) => {
+        let subTotal = info.price
+        let itemData = { id: info?.id, itemId, name: info?.name, itemPrice: info?.price, subTotal, itemQuantity: 1, restaurant: info?.restaurant }
+        alert.success("Item added in cart");
+        handleReduxSubtotal(subTotal, itemData)
+
+    }
+
+    // this function will store subtotal data in redux state
+    const handleReduxSubtotal = (subTotal, itemData) => {
 
         handleLocalStorageCart(itemData)
+
         if (!cartList) {
             dispatch(totalPrice({ subTotal }, deliveryFee))
         }
@@ -151,23 +180,42 @@ const useItemMapping = () => {
     // this function save item in local store with ingredient
     const handleLocalStorageCart = (cartItem) => {
         if (preCart) {
-            let findId = items.findIndex(pd => pd.id === cartItem.id)
+            let findArrayIndex = items.findIndex(pd => pd.id === cartItem.id)
+            let findItem = items.find(pd => pd?.selectVariant?.id == cartItem?.selectVariant?.id)
 
-            if (findId === (-1)) {
+            let findVariantIndex = items.findIndex(pd => pd?.selectVariant?.id == cartItem?.selectVariant?.id)
+
+            if (!findItem && findArrayIndex !== (-1)) {
                 items.push(cartItem)
-                localStorage.setItem("cartItems", JSON.stringify(items))
+            }
+
+            else if (findArrayIndex === (-1)) {
+                items.push(cartItem)
+            }
+            else if (findItem && findVariantIndex !== (-1)) {
+                const sortArr1 = findItem?.ingredients.sort(function (a, b) { return a?.id - b?.id })
+                const sortArr2 = cartItem?.ingredients.sort(function (a, b) { return a?.id - b?.id })
+
+                const arr1 = JSON.stringify(sortArr1)
+                const arr2 = JSON.stringify(sortArr2)
+                if (arr1 === arr2) {
+                    items[findVariantIndex] = cartItem
+                }
+                else {
+                    items.push(cartItem)
+                }
             }
             else {
-                items[findId] = cartItem
-                localStorage.setItem("cartItems", JSON.stringify(items))
+                console.log("+1");
+                items[findArrayIndex] = cartItem
             }
+            localStorage.setItem("cartItems", JSON.stringify(items))
         }
         else {
             const itemArray = new Array(cartItem)
             localStorage.setItem("cartItems", JSON.stringify(itemArray))
         }
         setShow(false)
-        reset()
     }
 
 
@@ -177,9 +225,7 @@ const useItemMapping = () => {
         show,
         handleClose,
         handleAddCart,
-        singleVariant,
         handleVariantInput,
-        multipleVariant,
         handleMultiIngredient,
         handleQuantity,
         allIngredients

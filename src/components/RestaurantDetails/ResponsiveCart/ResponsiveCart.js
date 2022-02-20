@@ -13,8 +13,9 @@ const ResponsiveCart = () => {
   const location = useLocation();
   const navigate = useNavigate()
 
-  const { cartList, deliveryFee, handleQuantity, quantity } = useCartCalculation()
+  const { cartList, deliveryFee, handleQuantity, quantity, handleCheckoutPath } = useCartCalculation()
   const { total, subtotal } = useSelector((state) => state.totalPriceReducer)
+  const { totalQuantity } = useSelector((state) => state.totalQuantityReducer)
 
   useEffect(() => {
     if (location.pathname === "/user/checkout") {
@@ -33,17 +34,13 @@ const ResponsiveCart = () => {
     }
   });
 
-  const handleNavigate = () => {
-    navigate("/user/checkout")
-    setShow(false)
-  }
 
   return (
     <div className="ResponsiveCart">
       <div className="container">
         <div className="d-flex justify-content-between">
           <i className="fas fa-shopping-bag">
-            <span className="ms-1">0</span>
+            <span className="ms-1">{totalQuantity}</span>
           </i>
           <button onClick={handleShow}>VIEW CART</button>
           <p className="text-light m-0">Total: {cartList ? total : 0}tk</p>
@@ -64,7 +61,7 @@ const ResponsiveCart = () => {
 
               {
                 cartList && cartList.map(pd =>
-                  <div className="responsive_cart_item_wrapper w-100 mb-3">
+                  <div className="responsive_cart_item_wrapper w-100 mb-3" key={pd?.itemId} >
                     <div className="w-50">
                       <p className="brand_color m-0 fw-bold brand_color">{pd?.name}</p>
                       <div className="second_title">{pd?.selectVariant?.ingredient && `+${pd?.selectVariant?.ingredient}`}</div>
@@ -78,19 +75,19 @@ const ResponsiveCart = () => {
                         {
                           quantity === 1 ?
                             <i className="fas fa-trash-alt brand_color"
-                              onClick={() => handleQuantity(pd?.id, "decrement")}
+                              onClick={() => handleQuantity("decrement", pd?.itemId)}
                               style={{ cursor: "pointer", fontSize: "12px" }}
                             >
                             </i>
                             :
-                            <i className="fas fa-minus disable-select brand_color" style={{ cursor: "pointer", fontSize: "12px" }} onClick={() => handleQuantity(pd?.id, "decrement")}></i>
+                            <i className="fas fa-minus disable-select brand_color" style={{ cursor: "pointer", fontSize: "12px" }} onClick={() => handleQuantity("decrement", pd?.itemId)}></i>
                         }
 
-                        <input className="w-75 border-0 text-center" id={`item${pd?.id}`} value={pd?.itemQuantity} />
+                        <input className="w-75 border-0 text-center" id={`item${pd?.itemId}`} value={pd?.itemQuantity} />
 
                         <i className="fas fa-plus disable-select brand_color"
                           style={{ cursor: "pointer", fontSize: "12px" }}
-                          onClick={() => handleQuantity(pd?.id, "increment")}>
+                          onClick={() => handleQuantity("increment", pd?.itemId)}>
                         </i>
 
                       </div>
@@ -119,7 +116,7 @@ const ResponsiveCart = () => {
               </div>
             </div>
             {checkout && (
-              <button className="responsive_check_out_btn" onClick={handleNavigate}>
+              <button className="responsive_check_out_btn" onClick={handleCheckoutPath}>
                 GO TO CHECK OUT
               </button>
             )}

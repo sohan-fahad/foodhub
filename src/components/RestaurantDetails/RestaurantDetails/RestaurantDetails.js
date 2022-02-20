@@ -42,7 +42,7 @@ const RestaurantDetails = () => {
           <RestaurantItems items={items} />
         </div>
         <div className="col-lg-3 col-12  p-0">
-          <CartSection></CartSection>
+          <CartSection title={"Start adding items to your cart"}></CartSection>
         </div>
         <ResponsiveCart></ResponsiveCart>
       </div>

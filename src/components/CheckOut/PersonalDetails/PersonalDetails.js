@@ -1,11 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useState } from "react";
 import "./PersonalDetails.css";
 
 const PersonalDetails = () => {
-  const { user } = useSelector((state) => state.authCheckReducer)
-  console.log(user);
-  const { firstName, lastName, email, phone } = user;
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("user")))
+  }, [!user])
+
   return (
     <div className="PersonalDetails">
       <div className="PersonalDetails_title">
@@ -17,25 +21,25 @@ const PersonalDetails = () => {
           type="text"
           name=""
           placeholder="Email"
-          defaultValue={firstName}
+          defaultValue={user?.user?.firstName}
         />
         <input
           type="text"
           name=""
           placeholder="First name"
-          defaultValue={lastName}
+          defaultValue={user?.user?.lastName}
         />
         <input
           type="text"
           name=""
           placeholder="Last name"
-          defaultValue={email}
+          defaultValue={user?.user?.email}
         />
         <input
           type="number"
           name=""
           placeholder="Mobile number"
-          defaultValue={phone}
+          defaultValue={user?.user?.phone}
         />
         <input type="submit" value="SAVE" />
       </form>

@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet, useLocation } from "react-router";
 import { Navigate } from "react-router";
 
-const PrivateAuth = ({ children, rest }) => {
+const PrivateAuth = () => {
   const location = useLocation();
   const user = localStorage.getItem("user");
   return user ? (
