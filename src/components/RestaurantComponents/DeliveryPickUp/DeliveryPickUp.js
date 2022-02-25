@@ -13,7 +13,7 @@ const DeliveryPickUp = () => {
         <div className='DeliveryPickUp'>
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-8 col-12">
+                    <div className="col-lg-6 col-12">
                         <div className="row g-3">
                             <div className="col-6">
                                 <div className="DeliveryPickUp_wrapper" onClick={() => dispatch(delivery())}>

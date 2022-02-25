@@ -1,6 +1,7 @@
 .CartSection {
   height: 100vh;
   position: fixed;
+  background-color: #fff;
 }
 
 .CartSection .cart_items_wrapper {

@@ -1,54 +1,100 @@
 .DownloadApp {
   padding-bottom: 100px;
-  height: auto;
+  height: 700px;
   display: flex;
+  position: relative;
+  overflow: hidden;
 }
-.DownloadApp h1 {
-  font-size: 36px;
+.DownloadApp_bg {
+  background-color: var(--primary);
+  height: 450px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 150px;
+}
+.DownloadApp_title {
+  position: relative;
+  top:70px;
+  z-index: -3;
+}
+.DownloadApp_title h3 {
+  font-size: 180px;
   font-weight: 700;
-  color: var(--title);
   text-align: center;
-  margin-bottom: 30px;
-  text-transform: uppercase;
+  color: rgba(235, 235, 235, 0.397);
+  position: absolute;
+  top: -100px;
+  z-index: -1;
 }
 .DownloadApp p {
-  font-size: 16px;
-  text-align: center;
-  color: #646464;
-  margin-bottom: 60px;
-  text-transform: capitalize;
+  font-size: 36px;
+  color: var(--title);
+  margin-top: 30px;
+  /* text-align: center; */
+  margin-bottom: 20px;
+  font-weight: 200;
 }
 .DownloadApp .App_info {
   height: 100%;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-direction: column;
+  position: relative;
+  top: 100px;
 }
-.DownloadApp .App_info h3 {
+.DownloadApp .App_info h4 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 200;
+  color: #fff;
   text-align: left;
 }
-.DownloadApp .App_info p {
-  color: var(--primary);
+.DownloadApp .App_info h5 {
+  color: #fff;
   font-size: 18px;
+  font-weight: 200;
   text-align: left;
-  margin-bottom: 30px;
+  margin: 50px 0 70px 0;
+  position: static;
 }
 .DownloadApp .AppLinkImg {
   width: 80%;
 }
+.DownloadApp_img_wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  /* overflow: hidden; */
+}
+.DownloadApp_img {
+  position: absolute;
+  top: 0;
+  left: -100px;
+}
 
 @media screen and (max-width: 991px) {
   .DownloadApp {
-    position: relative;
-    top: 100px;
+    height: auto;
+    margin-top: 200px;
+    width: 100%;
+    overflow: hidden;
+    padding: 0px;
+    background-color: var(--primary);
   }
-  .DownloadApp .App_info h3 {
+
+  .DownloadApp_img_wrapper img {
+    width: 100%;
+    position: static;
+  }
+
+  .DownloadApp .App_info {
+    position: static;
+  }
+  
+  .DownloadApp .App_info h4 {
     text-align: center;
   }
-  .DownloadApp .App_info p {
+  .DownloadApp .App_info h5 {
     text-align: center;
     margin-top: 20px;
     padding-top: 0;
@@ -61,8 +107,21 @@
 }
 @media screen and (max-width: 768px) {
   .DownloadApp {
-    position: relative;
-    top: 200px;
+    position: static;
+    margin-top: 300px;
+    padding: 100px 0 50px;
+  }
+  .DownloadApp .App_info h4 {
+    font-size: 24px;
+  }
+  .DownloadApp .App_info h5 {
+    margin-bottom: 30px;
+  }
+  .DownloadApp_title {
+    display: none;
+  }
+  .DownloadApp_bg {
+    display: none;
   }
 }
 @media screen and (max-width: 600px) {

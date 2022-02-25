@@ -9,15 +9,20 @@ const ServiceCities = () => {
   const { server } = useServer();
 
   useEffect(() => {
-    fetch(server + "/fakeDB/main/citiesDB")
+    fetch("https://raw.githubusercontent.com/sohan-fahad/fakeDB/main/fakeCities")
       .then((res) => res.json())
-      .then((data) => setCities(data));
-  }, []);
+      .then((data) => {
+        setCities(data)
+      });
+  }, [!cities]);
+
   return (
     <div className="ServicesCities">
       <div className="container">
-        <h1>Coverage Area</h1>
-        <p>You prepare the food, we handle the rest</p>
+        <div className="ServicesCities_title">
+          <h3>Cuisines</h3>
+          <p>You Favorite Cuisines</p>
+        </div>
         <div className="row g-4">
           {cities.map((city) => (
             <ServiceCity key={city?.id} city={city}></ServiceCity>

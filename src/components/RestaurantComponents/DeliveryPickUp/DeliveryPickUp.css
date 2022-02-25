@@ -16,13 +16,14 @@
     z-index: 0;
 }
 .DeliveryPickUp .pickup {
-    background-image: url("../../../images/delivery.webp");
+    background-image: url("../../../images/pickup.webp");
     height: 100px;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     align-items: flex-end;
+    background-position: 0;
 }
 
 .DeliveryPickUp h3 {
@@ -31,7 +32,7 @@
     padding-left: 15px;
 }
 .DeliveryPickUp .delivery_overlay {
-    background-image: linear-gradient(rgba(165, 165, 165, 0.336), rgba(165, 165, 165, 0.336));
+    background-image: linear-gradient(rgba(36, 36, 36, 0.336), rgba(165, 165, 165, 0.336));
     height: 100px;
     width: 100%;
     position: absolute;

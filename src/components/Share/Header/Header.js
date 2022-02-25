@@ -11,6 +11,8 @@ import checkAuth from "../../../store/action/checkAuth";
 import TopMenu from "../TopMenu/TopMenu";
 import useAuthentication from "../../../Hooks/useAuthentication";
 import { totalQuantity } from "../../../store/action/totalQuantity";
+import logo from "../../../images/logo.png"
+import WhenAsap from "../../RestaurantComponents/WhenAsap/WhenAsap";
 
 const Header = () => {
 
@@ -91,10 +93,10 @@ const Header = () => {
     <>
       <div className="Header sticky-top" id="Header">
         {headerPopUp && !headerPopup && <TopMenu></TopMenu>}
-        <div className="container">
+        <div className="div_wrapper">
           <div className="header_container">
             <Navbar.Brand as={Link} to="/" className="brand_Logo">
-              LOGO
+              <img src={logo} alt="" className="img-fluid w-75" />
             </Navbar.Brand>
             {pathLocation === "find" && (
               <div className="deliverPlace_container1">
@@ -105,6 +107,16 @@ const Header = () => {
             {
               pathLocation === "corporate" ? <CorporateHeader></CorporateHeader> :
                 <div className="d-flex align-items-center">
+                  <div class="language-wrapper">
+                    <div class="language-switch">
+                      <button>
+                        EN
+                      </button>
+                      <button>
+                        BN
+                      </button>
+                    </div>
+                  </div>
                   {!userDetails ? (
                     <Nav.Link as={HashLink} to="/auth/new">
                       LOGIN
@@ -146,10 +158,16 @@ const Header = () => {
 
                   <Nav.Link as={HashLink} to={restaurantPath ? restaurantPath : "/"}>
                     <div className="d-flex">
-                      <i className="fas fa-shopping-bag"></i>
+                      <i className="fas fa-shopping-bag" style={{ fontSize: "25px" }}></i>
                       <span>{headerQuantity ? headerQuantity : ""}</span>
                     </div>
                   </Nav.Link>
+                  {
+                    user &&
+                    <Nav.Link as={HashLink} to={restaurantPath ? restaurantPath : "/"}>
+                      <i class="fas fa-heart" style={{ fontSize: "25px" }}></i>
+                    </Nav.Link>
+                  }
                 </div>
             }
 

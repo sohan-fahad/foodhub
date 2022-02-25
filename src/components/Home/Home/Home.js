@@ -11,15 +11,16 @@ import WorkProcess from "../WorkProcess/WorkProcess";
 
 const Home = () => {
 
+  console.log("first")
+
   return (
     <div>
       <HeroBox></HeroBox>
-      {/* <WorkProcess></WorkProcess> */}
-      <Vendor />
-      {/* <ServiceCities></ServiceCities> */}
-      <FoodHubBusiness></FoodHubBusiness>
-      <DownloadApp></DownloadApp>
       <RestaurantInfo></RestaurantInfo>
+      <ServiceCities></ServiceCities>
+      {/* <WorkProcess></WorkProcess> */}
+      <DownloadApp></DownloadApp>
+      <FoodHubBusiness></FoodHubBusiness>
       {/* <Blogs></Blogs> */}
     </div>
   );

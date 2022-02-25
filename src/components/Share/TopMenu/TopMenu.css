@@ -1,10 +1,9 @@
 .top_menu {
-  height: auto;
+  height: 70px;
   background-color: var(--primary);
   display: flex;
   align-items: center;
-  padding: 15px;
-  /* position: relative; */
+  padding: 10px;
 }
 .top_menu i {
   font-size: 25px;
@@ -19,7 +18,7 @@
   align-items: center;
 }
 .top_menu_container h1  {
-  font-size: 24px;
+  font-size: 22px;
   color: #fff;
   margin-bottom: 0;
   font-weight: 700;
@@ -28,10 +27,19 @@
 .top_menu_container button {
   background-color: var(--primary);
   border: 1px solid  #fff;
-  padding: 15px 30px;
+  padding: 15px 20px;
   color: #ffff;
   font-size: 16px;
   font-weight: 500;
+  border-radius: 10px;
+}
+.top_menu_container svg {
+  width: 50px;
+  margin-right: 20px;
+  color: var(--primary);
+}
+.top_menu_container .rider-icon__path {
+  color: var(--primary);
 }
 
 @media screen and (max-width: 768px) {

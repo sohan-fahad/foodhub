@@ -1,5 +1,9 @@
+.DeliverPlace {
+  display: flex;
+}
+
 .header_container .user_location1 {
   background-color: #fff;
   font-size: 16px;
-  border: none;
+  border: none; 
 }

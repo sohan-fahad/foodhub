@@ -1,12 +1,12 @@
 import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "./OfferSliderCard.css";
-const OfferSliderCard = ({ items, title }) => {
+const OfferSliderCard = ({ items, title, q1, q2, q3, q4 }) => {
   const responsive = {
-    0: { items: 1 },
-    600: { items: 2 },
-    768: { items: 3 },
-    1024: { items: 4 },
+    0: { items: q1 },
+    600: { items: q2 },
+    768: { items: q3 },
+    1024: { items: q4 },
   };
   return (
     <div className="OfferSliderCard">

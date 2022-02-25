@@ -8,17 +8,17 @@ import { Link } from "react-router-dom";
 const DownloadApp = () => {
   return (
     <div className="DownloadApp">
+      <div className="DownloadApp_bg"></div>
       <div className="container">
-        <h1>Download Our App</h1>
-        <p>the process of our service</p>
+        <div className="DownloadApp_title">
+          <h3>App</h3>
+          <p>Put us in your pocket</p>
+        </div>
         <div className="row g-4">
           <div className="col-lg-6 col-xs-12">
-            <img src={AppImg} className="img-fluid w-100" alt="" />
-          </div>
-          <div className="col-lg-6 col-xs-12">
             <div className="App_info">
-              <h3>Your desire food Is now In your hand</h3>
-              <p>Download! to get this app Faster way to order food</p>
+              <h4>Your desire food Is now In your hand</h4>
+              <h5>It's all at your fingertips – the restaurants and shops you love. Find the right food and groceries to suit your mood, and make the first bite last. Go ahead, download us.</h5>
               <div className="AppLinkImg">
                 <div className="row">
                   <div className="col-6">
@@ -37,6 +37,11 @@ const DownloadApp = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="col-lg-6 col-xs-12">
+            <div className="DownloadApp_img_wrapper">
+              <img src={AppImg} className="DownloadApp_img" alt="" />
             </div>
           </div>
         </div>

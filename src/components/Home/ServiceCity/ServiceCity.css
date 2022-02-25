@@ -2,16 +2,17 @@
   border-radius: 5px;
   position: relative;
   display: flex;
+  flex-direction: column;
+  background-color: #fff;
   justify-content: space-between;
+  height: 300px;
 }
 .city_card h4 {
-  position: absolute;
-  bottom: 5px;
-  padding-left: 5px;
-  color: #fff;
-  font-style: 16px;
+  text-align: center;
+  color: rgb(82, 82, 82);
+  font-size: 16px;
 }
-.city_card .arrow {
+/* .city_card .arrow {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -23,4 +24,4 @@
   color: #fff;
   border-radius: 5px;
   border: none;
-}
+} */

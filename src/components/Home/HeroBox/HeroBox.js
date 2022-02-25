@@ -25,8 +25,8 @@ const HeroBox = () => {
     <div className="hero_box">
       <div className="container">
         <div className="hero_container">
-          <h1>FOOD DELIVERY SERVICE</h1>
-          <p>Order your favorite food, we will deliver on right time</p>
+          {/* <h1>FOOD DELIVERY SERVICE</h1> */}
+          <h1>It's the food and groceries you love, delivered</h1>
           <div className="location_container">
             <div className="get_location">
               <input

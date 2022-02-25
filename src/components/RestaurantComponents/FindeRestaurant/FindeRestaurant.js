@@ -9,6 +9,9 @@ import SearchFilter from "../SearchFilter/SearchFilter";
 import "./FindeRestaurant.css";
 
 const FindeRestaurant = () => {
+
+  const user = JSON.parse(localStorage.getItem("user"))
+
   return (
     <div className="FindeRestaurant">
       <OfferCode></OfferCode>
@@ -16,7 +19,17 @@ const FindeRestaurant = () => {
       <SearchFilter></SearchFilter>
       <RestaurantOfferSlider></RestaurantOfferSlider>
       <CuisinesSlider></CuisinesSlider>
-      <RecommendedSliders></RecommendedSliders>
+      {
+        user &&
+        <RecommendedSliders title={"Your Restaurant"}></RecommendedSliders>
+      }
+      {
+        user &&
+        <RecommendedSliders title={"Your Favorite Restaurant"}></RecommendedSliders>
+      }
+
+
+      <RecommendedSliders title={"Recommended Restaurant"}></RecommendedSliders>
       <AllRestaurants></AllRestaurants>
     </div>
   );
