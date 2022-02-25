@@ -2,9 +2,106 @@ import React, { useState } from "react";
 import "./PaymentDetails.css";
 import creditCard from "../../../images/creditCard.png";
 import bkash from "../../../images/bKashIcon.png";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import useApi from "../../../Hooks/useApi"
+import { useDispatch } from "react-redux";
+import cartObject from "../../../store/action/cartObject";
+import { useNavigate } from "react-router";
+import { headerCartQuantity, totalQuantity } from "../../../store/action/totalQuantity";
 
 const PaymentDetails = () => {
   const [payment, setPayment] = useState("");
+
+  const cartItems = JSON.parse(localStorage.getItem("cartItems"))
+  const user = JSON.parse(localStorage.getItem("user"))
+  const restaurant_id = JSON.parse(localStorage.getItem("rstid"))
+
+  const { total } = useSelector((state) => state.totalPriceReducer)
+
+  const { foodHubAPI } = useApi()
+
+  const { cartObjectItem } = useSelector((state) => state.cartObjectReducer)
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const items = []
+
+  useEffect(() => {
+    console.log(cartItems);
+    if (cartItems) {
+      cartItems.forEach(element => {
+        let item = {
+          id: element?.id,
+          quantity: element?.itemQuantity,
+          price: element?.itemPrice,
+          items_extra: [
+
+          ]
+        }
+
+        element?.ingredients?.forEach(pd => {
+          let ingredient = {
+            ingredient_id: pd?.id,
+            quantity: element?.itemQuantity,
+            price: pd?.price
+          }
+          item?.items_extra.push(ingredient)
+        })
+
+        items.push(item)
+
+      });
+      dispatch(cartObject(items))
+    }
+
+  }, [!cartItems])
+
+
+
+  const handlePlaceOrder = () => {
+    const deliveryAddress = JSON.parse(localStorage.getItem("deliveryAddress"))
+
+    const orderItem = {
+      customer_id: user?.id,
+      note: deliveryAddress?.note,
+      item_count: cartItems.length,
+      grand_total: total,
+      restaurent_id: restaurant_id,
+      branch_id: 1,
+      is_paid: 0,
+      order_status: "pending",
+      payment_status: "pending",
+      status: 1,
+      items: cartObjectItem
+
+    }
+
+
+    fetch(`${foodHubAPI}/user/orders`, {
+      method: "post",
+      headers: {
+        "content-type": "application/json",
+        "x-access-token": `${user?.accessToken}`
+      },
+      body: JSON.stringify(orderItem)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data?.statusCode === 200) {
+          console.log(data);
+          localStorage.setItem("order_id", data?.payload?.id)
+          localStorage.removeItem("cartItems")
+          localStorage.removeItem("rstid")
+          localStorage.removeItem("qtnty")
+          localStorage.removeItem("exptPth")
+          dispatch(headerCartQuantity(0, ""))
+          navigate("/orderdetails")
+        }
+      })
+  }
+
   return (
     <div className="PaymentDetails">
       <div className="PersonalDetails_title">
@@ -102,6 +199,11 @@ const PaymentDetails = () => {
           </div>
         )}
       </div>
+      {
+        payment &&
+        <button onClick={handlePlaceOrder}>PLACE ORDER</button>
+      }
+
     </div>
   );
 };

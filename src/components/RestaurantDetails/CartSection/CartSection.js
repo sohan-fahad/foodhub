@@ -1,11 +1,17 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 import { useNavigate } from "react-router";
 import useCartCalculation from "../../../Hooks/useCartCalculation";
+import { delivery, pickUp } from "../../../store/action/deliverState";
 import "./CartSection.css";
 
+
 const CartSection = ({ title }) => {
+
+  const [path, setPath] = useState("")
 
   const { cartList, deliveryFee, handleQuantity, handleCheckoutPath, quantity } = useCartCalculation()
 
@@ -13,10 +19,40 @@ const CartSection = ({ title }) => {
 
 
   const { total, subtotal } = useSelector((state) => state.totalPriceReducer)
+  const { deliveryStatus } = useSelector((state) => state.deliverReducers)
+
+  const dispatch = useDispatch()
+
+  const handleDeliveryState = () => {
+    if (document.getElementById("deliveryStatus").checked) {
+      dispatch(delivery())
+    }
+    else {
+      dispatch(pickUp())
+    }
+  }
+
+  useEffect(() => {
+    if (location.pathname === "/user/checkout") {
+      setPath("checkout")
+    }
+  }, [])
 
 
   return (
     <div className="CartSection mt-5 px-3">
+      {
+        location.pathname === "/user/checkout" ? ""
+          :
+          <div className="d-flex justify-content-center">
+            <label>Delivery</label>
+            <label className="switch mx-2" onClick={handleDeliveryState}>
+              <input id="deliveryStatus" type="checkbox" checked={deliveryStatus === "pickup" ? true : false} />
+              <div></div>
+            </label>
+            <label>Pickup</label>
+          </div>
+      }
       <div className="cart_items">
         <p className="text-center fw-bold m-0">Your Cart</p>
         <p className="text-center second_color">

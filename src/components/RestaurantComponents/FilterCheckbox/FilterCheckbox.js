@@ -11,7 +11,7 @@ const FilterCheckbox = ({ items }) => {
                         type="checkbox"
                         name="custom-radio-btn"
                     />
-                    <label className="custom-radio checkbox-button" htmlFor={items?.id}><i class="fas fa-check-square w-100"></i></label>
+                    <label className="custom-radio checkbox-button" htmlFor={items?.id}><i className="fas fa-check-square w-100"></i></label>
                     <label className="label-text second_title" htmlFor={items?.id}>{items?.title}</label>
                 </div>
             </div>

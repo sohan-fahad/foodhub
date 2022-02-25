@@ -10,7 +10,7 @@ const ResponsiveFilterCheck = ({ item }) => {
                     type="checkbox"
                     name="custom-radio-btn"
                 />
-                <label className="custom-radio checkbox-button" htmlFor={item?.id}><i class="fas fa-check-square w-100"></i></label>
+                <label className="custom-radio checkbox-button" htmlFor={item?.id}><i className="fas fa-check-square w-100"></i></label>
                 <label className="label-text second_title" htmlFor={item?.id}>{item?.title}</label>
             </div>
         </div>

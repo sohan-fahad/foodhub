@@ -122,11 +122,11 @@ const ChallengeDetails = () => {
                                 <h1>{title}</h1>
                                 <div className='d-flex justify-content-center'>
                                     <p>
-                                        <i class="fas fa-concierge-bell"></i>
+                                        <i className="fas fa-concierge-bell"></i>
                                         <span className='ms-2'> {complateTask}/{ordersTask}</span>
                                     </p>
                                     <p>
-                                        <i class="far fa-clock ms-3"></i> {dayLeft} days left
+                                        <i className="far fa-clock ms-3"></i> {dayLeft} days left
                                     </p>
                                 </div>
                                 <div className="row">
@@ -135,8 +135,8 @@ const ChallengeDetails = () => {
                                     <div className="col-4"><hr /></div>
                                 </div>
                                 <h2>Collect</h2>
-                                <p className='second_title'><i class="fas fa-award me-2"></i> {points} point</p>
-                                <p className='m-0 second_title'><i class="fas fa-award me-2"></i> hungry for the weekend</p>
+                                <p className='second_title'><i className="fas fa-award me-2"></i> {points} point</p>
+                                <p className='m-0 second_title'><i className="fas fa-award me-2"></i> hungry for the weekend</p>
                             </div>
                         </div>
                         <div className="ChallengeDetails_terms">
@@ -148,7 +148,7 @@ const ChallengeDetails = () => {
                                 </ul>
 
                                 <div className='ChallengeDetails_terms_conditions'>
-                                    <button onClick={handleTerms}>Terms & conditions {!terms ? <i class="fas fa-chevron-down"></i> : <i class="fas fa-chevron-up"></i>}</button>
+                                    <button onClick={handleTerms}>Terms & conditions {!terms ? <i className="fas fa-chevron-down"></i> : <i className="fas fa-chevron-up"></i>}</button>
                                     {terms && <ul>
                                         {
                                             conditions.map(pd => <li className='mt-2'>{pd}</li>)

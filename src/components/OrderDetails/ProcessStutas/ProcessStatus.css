@@ -1,0 +1,123 @@
+.ProcessStatus {
+    position: relative;
+    bottom: 100px;
+    margin-top: 50px;
+}
+
+.ProcessStatus_estimate {
+    padding: 30px;
+    box-shadow: 1px 1px 10px #d4d4d4;
+    background-color: #fff;
+}
+.ProcessStatus_estimate h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--secondary);
+    text-align: center;
+}
+.ProcessStatus_estimate h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--title);
+    text-align: center;
+}
+.ProcessStatus_estimate p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--secondary);
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+.ProcessStatus_progress {
+    height: 5px;
+}
+.ProcessStatus_progress div {
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgb(202, 202, 202);
+}
+.ProcessStatus_progress .active_ProcessStatus {
+    background-color: var(--primary);
+}
+
+
+/*  */
+
+.ProcessStatus_riderContact {
+    padding: 30px;
+    box-shadow: 1px 1px 10px rgb(212, 212, 212);
+    margin-top: 30px;
+}
+
+
+/*  */
+
+.order_details_info {
+    /* padding: 30px 30px 0; */
+    background-color: #fff;
+    box-shadow: 1px 1px 10px rgb(212, 212, 212);
+}
+.ProcessStatus_viewDetails {
+    padding: 0 30px;
+}
+
+.ProcessStatus_viewDetails p {
+    background-color: #fff;
+    border: none;
+    font-size: 16px;
+    color: var(--title);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+.ProcessStatus_viewDetails i {
+    cursor: pointer;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+.ProcessStatus_viewDetails_wrapper {
+    padding: 30px 30px 15px;
+    background-color: rgb(235, 235, 235);
+}
+
+
+.ProcessStatus_help {
+    padding: 30px;
+    box-shadow: 1px 1px 10px rgb(212, 212, 212);
+    margin-top: 25px;
+}
+
+.ProcessStatus_help h5 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--title);
+}
+
+.ProcessStatus_help p {
+    font-size: 16px;
+    color: var(--secondary);
+}
+.ProcessStatus_help button {
+    padding: 10px 15px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background-color: #fff;
+    font-weight: 700;
+    margin: 0 auto;
+}
+.ProcessStatus_help button:hover {
+    background-color: var(--primary);
+    color: #fff;
+    transition: 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+    .ProcessStatus {
+    position: static;
+    margin-bottom: 50px;
+}
+}

@@ -1,5 +1,6 @@
 .CartSection {
   height: 100vh;
+  position: fixed;
 }
 
 .CartSection .cart_items_wrapper {
@@ -34,6 +35,37 @@ button[disabled]{
 .cart_items {
   padding: 10px 30px;
   background-color: #fff;
+}
+
+.CartSection .switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+.CartSection .switch {
+  display: inline-block;
+  font-size: 20px; /* 1 */
+  height: 1em;
+  width: 2em;
+  background: #BDB9A6;
+  border-radius: 1em;
+}
+
+.CartSection .switch div {
+  height: 1em;
+  width: 1em;
+  border-radius: 1em;
+  background: var(--primary);
+  box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
+  -webkit-transition: all 300ms;
+     -moz-transition: all 300ms;
+          transition: all 300ms;
+}
+
+.CartSection .switch input:checked + div {
+  -webkit-transform: translate3d(100%, 0, 0);
+     -moz-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
 }
 
 @media screen and (max-width: 991px) {

@@ -18,9 +18,9 @@ const RestaurantItem = ({ product }) => {
 
 
   const { handleShow, show, handleClose, handleMultiIngredient, handleQuantity, handleAddCart, allIngredients, handleVariantInput } = useItemMapping()
-  // console.log(allIngredients);
   const { register, handleSubmit, reset } = useForm();
   const { id } = useParams()
+
 
 
 

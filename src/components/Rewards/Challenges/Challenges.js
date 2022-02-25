@@ -31,7 +31,7 @@ const Challenges = ({ challenges }) => {
                         </svg>
                         <span className='ms-1'>{points}</span>
                     </div>
-                    <i class="far fa-clock"> <span> {dayLeft}</span></i>
+                    <i className="far fa-clock"> <span> {dayLeft}</span></i>
                 </div>
             </div>
         </div>

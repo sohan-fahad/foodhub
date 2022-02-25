@@ -6,6 +6,7 @@ import FoodHubBusiness from "../FoodHubBusiness/FoodHubBusiness";
 import HeroBox from "../HeroBox/HeroBox";
 import RestaurantInfo from "../RestaurantInfo/RestaurantInfo";
 import ServiceCities from "../ServiceCities/ServiceCities";
+import Vendor from "../Vendor/Vendor";
 import WorkProcess from "../WorkProcess/WorkProcess";
 
 const Home = () => {
@@ -13,7 +14,8 @@ const Home = () => {
   return (
     <div>
       <HeroBox></HeroBox>
-      <WorkProcess></WorkProcess>
+      {/* <WorkProcess></WorkProcess> */}
+      <Vendor />
       {/* <ServiceCities></ServiceCities> */}
       <FoodHubBusiness></FoodHubBusiness>
       <DownloadApp></DownloadApp>

@@ -26,6 +26,7 @@ import Corporate from "../src/components/Corporate/Corporate/Corporate"
 import CorporateContact from "./components/CorporateContact/CorporateContact/CorporateContact";
 import Rewards from "./components/Rewards/Rewards/Rewards";
 import ChallengeDetails from "./components/Rewards/ChallengeDetails/ChallengeDetails";
+import OrderDetails from "./components/OrderDetails/OrderDetails/OrderDetails"
 
 function App() {
   return (
@@ -72,7 +73,8 @@ function App() {
             <Route path="/rewards/challenges" element={<Rewards />} />
             <Route path="/rewards/challenges/:id" element={<ChallengeDetails />} />
 
-            <Route path="/checkout" element={<CheckOut />} />
+            {/* <Route path="/checkout" element={<CheckOut />} /> */}
+            <Route path="/orderdetails" element={<OrderDetails />} />
 
           </Routes>
           <Footer></Footer>

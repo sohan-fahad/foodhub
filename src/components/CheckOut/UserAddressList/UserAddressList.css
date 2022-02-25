@@ -1,0 +1,34 @@
+.UserAddressList {
+    padding: 30px;
+    border: 1px solid var(--primary);
+    display: flex;
+    justify-content: space-between;
+}
+.UserAddressList .UserAddressList_checkAddress input {
+    display: block !important;
+} 
+.UserAddressList .UserAddressList_action button{
+    background-color: #fff;
+    border: none;
+    font-size: 16px;
+    color: var(--primary);
+}
+.UserAddressList .UserAddressList_action button:last-child {
+    margin-left: 15px;
+}
+
+.UserAddressList_view_btn {
+    background-color: #fff;
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    margin-top: 30px;
+}
+.modal-header {
+    border-bottom: none;
+}
+
+.btn-close:hover {
+    color: var(--primary) !important;
+}

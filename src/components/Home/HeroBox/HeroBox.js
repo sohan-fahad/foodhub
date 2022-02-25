@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import useAuth from "../../../Hooks/useAuth";
 import { delivery, pickUp } from "../../../store/action/deliverState";
 import "./HeroBox.css";
 
@@ -8,19 +9,7 @@ const HeroBox = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
 
-  const getUserLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    }
-  };
-
-  function showPosition(position) {
-    var userAddress =
-      "Latitude: " +
-      position.coords.latitude +
-      "<br>Longitude: " +
-      position.coords.longitude;
-  }
+  const { getUserLocation } = useAuth()
 
   const handlePickup = () => {
     dispatch(pickUp())

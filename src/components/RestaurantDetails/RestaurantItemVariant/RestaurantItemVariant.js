@@ -42,14 +42,14 @@ const RestaurantItemVariant = ({ register, type, handleMultiIngredient, title, i
                                 :
 
                                 <div key={ingredient.id} className="d-flex justify-content-between">
-                                    <div class="form-check">
-                                        <input class="form-check-input multiIngredient"
+                                    <div className="form-check">
+                                        <input className="form-check-input multiIngredient"
                                             type="checkbox"
                                             value={ingredient.b[0].name}
                                             id={`ingredientCheck${ingredient.id}`}
                                             onClick={() => handleMultiIngredient(ingredient.id, `ingredientCheck${ingredient.id}`, ingredient.ingredient_price)} />
 
-                                        <label class="form-check-label" htmlFor={`ingredientCheck${ingredient.id}`}>
+                                        <label className="form-check-label" htmlFor={`ingredientCheck${ingredient.id}`}>
                                             {ingredient.b[0].name}
                                         </label>
                                     </div>
@@ -66,14 +66,14 @@ const RestaurantItemVariant = ({ register, type, handleMultiIngredient, title, i
                 ingredientGroup?.ingredient_type === 2 &&
                 ingredientGroup?.a?.map(ingredient =>
                     <div key={ingredient.id} className="d-flex justify-content-between">
-                        <div class="form-check">
-                            <input class="form-check-input multiIngredient"
+                        <div className="form-check">
+                            <input className="form-check-input multiIngredient"
                                 type="checkbox"
                                 value={ingredient.b[0].name}
                                 id={`ingredientCheck${ingredient.id}`}
                                 onClick={() => handleMultiIngredient(ingredient.id, `ingredientCheck${ingredient.id}`, ingredient.ingredient_price)} />
 
-                            <label class="form-check-label" htmlFor={`ingredientCheck${ingredient.id}`}>
+                            <label className="form-check-label" htmlFor={`ingredientCheck${ingredient.id}`}>
                                 {ingredient.b[0].name}
                             </label>
                         </div>

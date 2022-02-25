@@ -21,7 +21,7 @@ const CheckOut = () => {
             <PaymentDetails></PaymentDetails>
           </div>
           <div className="col-lg-4 col-12">
-            <CartSection title={`Your order from ${restaurantName}`}></CartSection>
+            <CartSection title={`Your order from ${restaurantName}`} />
             <ResponsiveCart></ResponsiveCart>
           </div>
         </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Navigate, useNavigate, useRoutes } from "react-router";
 import checkAuth from "../store/action/checkAuth";
+import location from "../store/action/location";
 import { headerCartQuantity } from "../store/action/totalQuantity";
 import useApi from "./useApi";
 
@@ -42,6 +43,7 @@ const useAuth = () => {
         localStorage.removeItem("user")
         localStorage.removeItem("expire_session")
         localStorage.removeItem("headerPopup")
+        localStorage.clear()
       }
 
       else if (preSession > currentSession) {
@@ -69,16 +71,26 @@ const useAuth = () => {
   }, [userDetails])
 
 
+  // this function will get user location value
+  const getUserLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  };
 
-
-
-
+  // this function will set location value in redux
+  function showPosition(position) {
+    dispatch(location(position.coords.latitude, position.coords.longitude))
+    const userLocation = { latitude: position.coords.latitude, longitude: position.coords.longitude }
+    localStorage.setItem("location", JSON.stringify(userLocation))
+  }
 
 
   return {
     handleExpirerTIme,
     setControl,
-    control
+    control,
+    getUserLocation
   };
 };
 

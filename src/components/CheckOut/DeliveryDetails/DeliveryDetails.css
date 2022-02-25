@@ -101,6 +101,12 @@
   color: var(--title);
   margin-bottom: 20px;
 }
+.DeliveryDetails_address_btn {
+  background-color: #fff;
+  border: none;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
 .DeliveryDetails_address_map {
   box-shadow: 1px 1px 10px rgba(219, 219, 219, 0.452);
 }

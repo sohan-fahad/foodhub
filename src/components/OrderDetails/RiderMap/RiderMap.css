@@ -1,0 +1,8 @@
+.RiderMap {
+    width: 100%;
+    height: 400px;
+}
+.RiderMap iframe {
+    width: 100%;
+    height: 100%;
+}
